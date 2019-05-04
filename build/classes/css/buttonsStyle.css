@@ -1,0 +1,26 @@
+.buttonBlue{
+    -fx-text-fill: #ffffff;
+    -fx-background-color:  #3580C2;
+    -fx-background-radius:  35px;
+}
+.buttonBlue:hover{
+    -fx-text-fill: #3580C2;
+    -fx-background-color:  #ffffff;
+}
+.buttonBlue:pressed{
+    -fx-text-fill: #ffffff;
+    -fx-background-color:  #3580C2;
+}
+.buttonMenu{
+    -fx-text-fill: #ffffff;
+    -fx-background-color:  transparent;
+    -fx-background-radius:  0px;
+}
+.buttonMenu:hover{
+    -fx-text-fill: #ffffff;
+    -fx-background-color:  #202326;
+}
+.buttonMenu:pressed{
+    -fx-text-fill: #323538;
+    -fx-background-color:  #ffffff;
+}
