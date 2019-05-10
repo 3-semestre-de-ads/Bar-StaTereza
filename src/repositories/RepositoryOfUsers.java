@@ -14,7 +14,7 @@ public class RepositoryOfUsers implements InterfaceCRUD {
     private User user = null;
         
     @Override
-    public void create() {
+    public String create() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

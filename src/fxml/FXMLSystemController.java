@@ -12,7 +12,7 @@ import javafx.scene.layout.BorderPane;
  * @author Isaías de França Leite.
  */
 public class FXMLSystemController implements Initializable {
-
+    
     @FXML
     private BorderPane borderpane;
     
@@ -35,7 +35,7 @@ public class FXMLSystemController implements Initializable {
     
     @FXML
     private void loadSceneCommands(){
-        scene.sceneTransition(borderpane, "/fxml/FXMLSystemCommands.fxml");
+        scene.sceneTransition(borderpane, "/fxml/FXMLSystemOrderPad.fxml");
     }
     
     @FXML
@@ -50,17 +50,16 @@ public class FXMLSystemController implements Initializable {
     
     @FXML
     private void loadSceneAnalyze(){
-        scene.sceneTransition(borderpane, "/fxml/FXMLSystemAnalyze.fxml");
+        scene.sceneTransition(borderpane, "/fxml/FXMLSystemReport.fxml");
     }
     
     @FXML
     private void loadSceneUsers(){
-        scene.sceneTransition(borderpane, "/fxml/FXMLSystemUser.fxml");
+        scene.sceneTransition(borderpane, "/fxml/FXMLSystemUsers.fxml");
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-    }  
-
-}
+        loadSceneCashier();
+    }
+ }  

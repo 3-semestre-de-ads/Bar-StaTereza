@@ -1,8 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #666633;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="fxml.FXMLSystemCashierController">
-    
-</AnchorPane>
+<StackPane prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" StackPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="126.0" prefWidth="1280.0" styleClass="systemTitleColor" stylesheets="@../css/buttonsStyle.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="509.0" layoutY="16.0" text="CAIXA" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <font>
+                        <Font name="Serif Regular" size="84.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <StackPane prefHeight="52.0" prefWidth="1280.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="135.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+                     <image>
+                        <Image url="@../images/btn_help_system.png" />
+                     </image>
+                  </ImageView>
+                  <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="50.0" styleClass="buttonTransparent" stylesheets="@../css/buttonsStyle.css" StackPane.alignment="TOP_RIGHT">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </StackPane>
+            <HBox alignment="CENTER" layoutX="28.0" layoutY="201.0" prefHeight="576.0" prefWidth="1237.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <VBox prefHeight="576.0" prefWidth="580.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <TableView prefHeight="531.0" prefWidth="580.0" VBox.vgrow="ALWAYS">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TableView>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" right="20.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="588.0" prefWidth="649.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="663.0" text="TOTAL" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
+                        <Label alignment="CENTER" prefHeight="131.0" prefWidth="651.0" text="R$: 0,00" textAlignment="CENTER" textFill="#39b056" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font size="90.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="41.0" prefWidth="649.0" text="FORMA DE PAGAMENTO" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="94.0" prefWidth="243.0" text="DINHEIRO" />
+                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="94.0" prefWidth="230.0" text="CREDITO" />
+                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="94.0" prefWidth="230.0" text="DEBITO" />
+                           </children>
+                        </HBox>
+                        <Label alignment="CENTER" prefHeight="21.0" prefWidth="658.0" text="PAGAMENTO" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <TextField>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button mnemonicParsing="false" styleClass="buttonBlack" stylesheets="@../css/buttonsStyle.css" text="CALCULAR" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="32.0" prefWidth="649.0">
+                           <children>
+                              <Label text="TROCO">
+                                 <font>
+                                    <Font size="45.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="250.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label text="R$: 0,00">
+                                 <font>
+                                    <Font size="45.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Pane prefHeight="10.0" prefWidth="649.0" style="-fx-background-color: #000000;" />
+                        <HBox alignment="CENTER" prefHeight="78.0" prefWidth="649.0">
+                           <children>
+                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="194.0" text="FINALIZAR" textAlignment="CENTER" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" top="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

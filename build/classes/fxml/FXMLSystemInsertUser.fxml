@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+
+<StackPane fx:id="stackPane" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.FXMLSystemInsertUserController">
+   <children>
+      <AnchorPane fx:id="anchorPane" prefHeight="200.0" prefWidth="200.0" StackPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="126.0" prefWidth="1280.0" styleClass="systemTitleColor" stylesheets="@../css/buttonsStyle.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="509.0" layoutY="16.0" text="ADICIONAR USUÁRIO" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <font>
+                        <Font name="Serif Regular" size="84.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <StackPane prefHeight="150.0" prefWidth="1280.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="135.0">
+               <children>
+                  <ImageView fitHeight="108.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
+                     <image>
+                        <Image url="@../images/btn_system_home.png" />
+                     </image>
+                  </ImageView>
+                  <Button mnemonicParsing="false" onAction="#loadSceneUsers" prefHeight="104.0" prefWidth="106.0" style="-fx-background-color: transparent;" textFill="WHITE" StackPane.alignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ImageView fitHeight="50.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+                     <image>
+                        <Image url="@../images/btn_help_system.png" />
+                     </image>
+                  </ImageView>
+                  <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="50.0" styleClass="buttonTransparent" stylesheets="@../css/buttonsStyle.css" StackPane.alignment="TOP_RIGHT">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </StackPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

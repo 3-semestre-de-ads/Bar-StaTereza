@@ -9,7 +9,7 @@ public interface InterfaceCRUD {
     /**
      * Função responsável por inserir os dados no banco de dados
      */
-    public void create();
+    public String create();
 
     /**
      * Função responsável por listar os dados no banco de dados

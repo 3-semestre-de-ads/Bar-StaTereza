@@ -1,5 +1,6 @@
 package functions;
 
+import fxml.FXMLSystemInsertGameController;
 import java.io.IOException;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
@@ -32,7 +33,29 @@ public class SceneChange {
         root.translateYProperty().set(scene.getHeight());
         stackPane.getChildren().add(root);
         Timeline timeline = new Timeline();
-        KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
+        KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.DISCRETE);
+        KeyFrame kf = new KeyFrame(Duration.seconds(0.001), kv);
+        timeline.getKeyFrames().add(kf);
+        timeline.setOnFinished(t -> {
+            stackPane.getChildren().remove(anchorPane);
+        });
+        timeline.play();
+    }
+    
+    /**
+     * Realizar a transição entre telas com parâmetro.
+     * @param stackPane - É componente da tela atual.  
+     * @param anchorPane - É componente da tela atual.
+     * @param fxmlloader É componete da tela com construtor dela.
+     * @throws IOException
+     */
+    public void sceneTransition(StackPane stackPane, AnchorPane anchorPane, FXMLLoader fxmlloader) throws IOException{
+        Parent root = fxmlloader.load();
+        Scene scene = anchorPane.getScene();
+        root.translateYProperty().set(scene.getHeight());
+        stackPane.getChildren().add(root);
+        Timeline timeline = new Timeline();
+        KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.DISCRETE);
         KeyFrame kf = new KeyFrame(Duration.seconds(0.001), kv);
         timeline.getKeyFrames().add(kf);
         timeline.setOnFinished(t -> {
