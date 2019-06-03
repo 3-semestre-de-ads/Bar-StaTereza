@@ -9,6 +9,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 
+/**
+ * Classe responsável por estabelecer a conexão entre a classe UpdateSystem e a interface de gráfica de Login-Update.
+ * @author Isaías de França Leite
+ */
 public class FXMLLoginUpdateController implements Initializable {
 
     SceneChange sceneChange = new SceneChange();
