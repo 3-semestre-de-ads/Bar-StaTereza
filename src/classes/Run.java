@@ -6,12 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import repositories.RepositoryOfGames;
 
-/**
- * Classe responsável por executar a aplicação.
- * @author Isaías de França Leite
- */
 public class Run extends Application {
     
     @Override
@@ -28,4 +23,5 @@ public class Run extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+    
 }

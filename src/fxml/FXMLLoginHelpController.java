@@ -9,10 +9,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 
-/**
- * Classe responsável por estabelecer a conexão com a interface Login-Help.
- * @author Isaías de França Leite
- */
 public class FXMLLoginHelpController implements Initializable {
     
     SceneChange sceneChange = new SceneChange();

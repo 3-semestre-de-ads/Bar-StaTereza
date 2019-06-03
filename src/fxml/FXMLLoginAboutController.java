@@ -9,10 +9,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 
-/**
- * Classe responsável por estabelecer a verificação e comunicação do usuário com o sistema.
- * @author Isaías de França Leite
- */
 public class FXMLLoginAboutController implements Initializable {
 
     SceneChange sceneChange = new SceneChange();

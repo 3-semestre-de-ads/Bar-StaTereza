@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="dist/Bar - Sta Tereza.jar"/>
-	<classpathentry kind="lib" path="dist/lib/mysql-connector-java-5.1.47-bin.jar"/>
-	<classpathentry kind="lib" path="dist/lib/sqljdbc4.jar"/>
-	<classpathentry kind="output" path="build/classes"/>
-</classpath>
