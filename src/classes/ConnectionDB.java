@@ -18,7 +18,7 @@ public class ConnectionDB {
     public Connection connection = null;
     private final String DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     private final String URL = "jdbc:sqlserver://DESKTOP-E7UICTR\\ISAIAS:1433;databaseName=SystemDB;user=userSQL;password=2501";
-    
+
     /**
      * Função resposável por estabelecer a conexão com banco de dados. 
      * @return - retornar a conexão ou um erro caso tenha um falha na comunicação com banco de dados.

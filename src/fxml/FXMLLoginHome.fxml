@@ -53,7 +53,7 @@
                   <Image url="@../images/logo_company.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnLogin" ellipsisString="" layoutX="83.0" layoutY="525.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="299.0" styleClass="buttonBlue" stylesheets="@../css/buttonsStyle.css" text="LOGIN" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="btnLogin" ellipsisString="" layoutX="83.0" layoutY="525.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="299.0" styleClass="buttonBlue" stylesheets="@../css/style.css" text="LOGIN" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Rockwell" size="25.0" />
                </font>

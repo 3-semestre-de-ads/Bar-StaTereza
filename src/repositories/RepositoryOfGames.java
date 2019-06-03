@@ -53,7 +53,7 @@ public class RepositoryOfGames {
     public ObservableList readDB(){
         ObservableList<Game> listGame = FXCollections.observableArrayList();
         try {
-            ResultSet rs = connectionDB.getConnection().createStatement().executeQuery("select * from Jogos");
+            ResultSet rs = connectionDB.getConnection().createStatement().executeQuery("SELECT * FROM Jogos");
             
             while(rs.next()){
                 listGame.add(new Game(rs.getInt("codJogo"),rs.getString("nomeJogo"),rs.getString("catJogo"),rs.getString("descJogo")));

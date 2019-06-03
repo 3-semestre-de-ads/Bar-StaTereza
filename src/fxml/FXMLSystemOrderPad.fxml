@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
@@ -10,14 +11,91 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<StackPane prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane prefHeight="996.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" StackPane.alignment="CENTER">
          <children>
-            <AnchorPane prefHeight="126.0" prefWidth="1280.0" styleClass="systemTitleColor" stylesheets="@../css/buttonsStyle.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <HBox layoutX="6.0" layoutY="118.0" prefHeight="878.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="110.0">
+               <children>
+                  <VBox prefHeight="793.0" prefWidth="348.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="71.0" prefWidth="346.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <TextField>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <StackPane prefHeight="82.0" prefWidth="57.0">
+                                 <children>
+                                    <ImageView fitHeight="45.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/btn_search.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="57.0" styleClass="buttonTransparent" stylesheets="@../css/style.css">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="104.0" prefWidth="346.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <ComboBox prefWidth="150.0" />
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tableGames" fixedCellSize="0.0" prefHeight="574.0" prefWidth="346.0" VBox.vgrow="ALWAYS">
+                           <columns>
+                              <TableColumn fx:id="nameGame" prefWidth="52.0" />
+                              <TableColumn fx:id="categoryGame" prefWidth="111.0" text="COMANDA" />
+                              <TableColumn fx:id="categoryGame1" prefWidth="110.0" text="MESA" />
+                              <TableColumn fx:id="nameGame1" prefWidth="194.0" />
+                           </columns>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </TableView>
+                        <HBox alignment="CENTER_LEFT" prefHeight="18.0" prefWidth="346.0">
+                           <children>
+                              <Label prefHeight="30.0" prefWidth="71.0" text="LEGENDA:" textFill="#737171" />
+                              <AnchorPane prefHeight="31.0" prefWidth="52.0">
+                                 <children>
+                                    <Pane layoutX="19.0" layoutY="3.0" prefHeight="22.0" prefWidth="23.0" style="-fx-background-color: #FF3D3D; -fx-background-radius: 5px;" />
+                                 </children>
+                              </AnchorPane>
+                              <Text fx:id="totalGamesAllocated" fill="#737171" strokeType="OUTSIDE" strokeWidth="0.0" text="MESA OCUPADA (X)" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="30.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <StackPane prefHeight="911.0" prefWidth="896.0" style="-fx-background-color: #D6D6D6;" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <children>
+                        <Label prefHeight="97.0" prefWidth="433.0" text="NENHUMA &#10;COMANDA SELECIONADA" textAlignment="CENTER" textFill="#737171">
+                           <font>
+                              <Font name="System Bold" size="35.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+            <AnchorPane prefHeight="126.0" prefWidth="1280.0" styleClass="systemTitleColor" stylesheets="@../css/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
                   <Label alignment="CENTER" layoutX="509.0" layoutY="16.0" text="COMANDAS" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <font>
@@ -26,45 +104,6 @@
                   </Label>
                </children>
             </AnchorPane>
-            <StackPane prefHeight="52.0" prefWidth="1280.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="135.0">
-               <children>
-                  <ImageView fitHeight="50.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
-                     <image>
-                        <Image url="@../images/btn_help_system.png" />
-                     </image>
-                  </ImageView>
-                  <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="50.0" styleClass="buttonTransparent" stylesheets="@../css/buttonsStyle.css" StackPane.alignment="TOP_RIGHT">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-               </children>
-            </StackPane>
-            <TableView fx:id="tableGames" layoutX="50.0" layoutY="335.0" prefHeight="390.0" prefWidth="389.0">
-               <columns>
-                  <TableColumn fx:id="nameGame" prefWidth="200.0" text="NOME" />
-                  <TableColumn fx:id="categoryGame" prefWidth="265.0" text="CATEGORIA" />
-                  <TableColumn fx:id="descriptionGame" minWidth="0.0" prefWidth="166.0" text="DESCRIÇÃO" />
-                  <TableColumn fx:id="tableColumnUpdate" minWidth="0.0" prefWidth="166.0" />
-                  <TableColumn fx:id="tableColumnDelete" minWidth="0.0" prefWidth="166.0" />
-               </columns>
-            </TableView>
-            <TextField layoutX="116.0" layoutY="192.0" />
-            <StackPane layoutX="319.0" layoutY="187.0" prefHeight="42.0" prefWidth="50.0">
-               <children>
-                  <ImageView fitHeight="50.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/btn_search.png" />
-                     </image>
-                  </ImageView>
-                  <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="52.0" styleClass="buttonTransparent" stylesheets="@../css/buttonsStyle.css">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-               </children>
-            </StackPane>
-            <ComboBox layoutX="170.0" layoutY="261.0" prefWidth="150.0" />
          </children>
       </AnchorPane>
    </children>

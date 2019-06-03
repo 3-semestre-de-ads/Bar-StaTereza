@@ -31,14 +31,10 @@ import repositories.RepositoryOfGames;
  */
 public class FXMLSystemGamesController implements Initializable {
     
-    // Valor total de jogos cadastrados.
-    @FXML private Text totalGames;
-    @FXML private Text totalGamesAllocated;
-    
     // Instancia do RepositoryOfGames.
     RepositoryOfGames repositoryOfGames = new RepositoryOfGames();
     
-    // Mensagem de confirmação para alterar ou deletar.
+    // Mensagem de confirmação para alterar ou deletar jogos.
     Alert alertSystem = new Alert(Alert.AlertType.CONFIRMATION);
     
     // TableView para visualizar todos jogos.
@@ -50,8 +46,12 @@ public class FXMLSystemGamesController implements Initializable {
     @FXML private TableColumn<Game, String> tableColumnDescriptionGame;
     @FXML private TableColumn tableColumnUpdate;
     @FXML private TableColumn tableColumnDelete;
+    
+    // Valor total de jogos cadastrados.
+    @FXML private Text totalGames;
+    @FXML private Text totalGamesAllocated;
    
-    // Transição de Tela.
+    // Transição de rela.
     SceneChange sceneChange = new SceneChange();
     @FXML private AnchorPane anchorPane;
     @FXML private StackPane stackPane;
@@ -61,14 +61,14 @@ public class FXMLSystemGamesController implements Initializable {
         listGames();
     }
     
-    // Função resposável por fazer transição para tela inserir jogos.
+    // Função responsável por fazer a transição para tela de inserir jogos.
     @FXML private void loadSceneInsertGames() throws IOException {
         FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("/fxml/FXMLSystemInsertGame.fxml"));
         fxmlloader.setController(new FXMLSystemInsertGameController(null, "C"));
         sceneChange.sceneTransition(stackPane, anchorPane, fxmlloader);
     }
-    // Função responsável contar quantiade de jogos tem cadastrados.
-    private void countTotalGame(){
+    // Função responsável contar quantidade de jogos cadastrados.
+    private void countTotalGames(){
         totalGames.setText("GAMES: "+repositoryOfGames.countTotalGames());
     }
     
@@ -76,12 +76,12 @@ public class FXMLSystemGamesController implements Initializable {
     private void countTotalGamesAllocated(){
         totalGamesAllocated.setText("JOGOS ALOCADOS ("+repositoryOfGames.countTotalGamesAllocated()+")");
     }
-    
+   
     // Função responsável por listar todos jogos no TableView
     private void listGames(){
-        countTotalGame();
+        countTotalGames();
         countTotalGamesAllocated();
-        tableColumnCodeGame.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+        tableColumnCodeGame.setCellValueFactory(new PropertyValueFactory<>("code"));
         tableColumnNameGame.setCellValueFactory(new PropertyValueFactory<>("name"));
         tableColumnCategoryGame.setCellValueFactory(new PropertyValueFactory<>("category"));
         tableColumnDescriptionGame.setCellValueFactory(new PropertyValueFactory<>("description"));

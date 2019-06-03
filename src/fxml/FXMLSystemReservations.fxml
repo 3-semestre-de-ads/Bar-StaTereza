@@ -21,7 +21,7 @@
    <children>
       <AnchorPane fx:id="anchorPane" prefHeight="200.0" prefWidth="200.0" StackPane.alignment="CENTER">
          <children>
-            <AnchorPane prefHeight="126.0" prefWidth="1280.0" styleClass="systemTitleColor" stylesheets="@../css/buttonsStyle.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <AnchorPane prefHeight="126.0" prefWidth="1280.0" styleClass="systemTitleColor" stylesheets="@../css/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
                   <Label alignment="CENTER" layoutX="509.0" layoutY="16.0" text="RESERVAS" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <font>
@@ -37,7 +37,7 @@
                         <Image url="@../images/btn_insert_system.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" onAction="#loadSceneInsertReservation" prefHeight="104.0" prefWidth="106.0" styleClass="buttonTransparent" stylesheets="@../css/buttonsStyle.css" textFill="WHITE" StackPane.alignment="CENTER">
+                  <Button mnemonicParsing="false" onAction="#loadSceneInsertReservation" prefHeight="104.0" prefWidth="106.0" styleClass="buttonTransparent" stylesheets="@../css/style.css" textFill="WHITE" StackPane.alignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -47,7 +47,7 @@
                         <Image url="@../images/btn_help_system.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="50.0" styleClass="buttonTransparent" stylesheets="@../css/buttonsStyle.css" StackPane.alignment="TOP_RIGHT">
+                  <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="50.0" styleClass="buttonTransparent" stylesheets="@../css/style.css" StackPane.alignment="TOP_RIGHT">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -70,7 +70,7 @@
                                     <Image url="@../images/btn_search.png" />
                                  </image>
                               </ImageView>
-                              <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="57.0" styleClass="buttonTransparent" stylesheets="@../css/buttonsStyle.css">
+                              <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="57.0" styleClass="buttonTransparent" stylesheets="@../css/style.css">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -81,7 +81,7 @@
                   </HBox>
                   <HBox alignment="CENTER" opacity="0.71" prefHeight="77.0" prefWidth="414.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <Text fx:id="totalGames" fill="#737171" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                        <Text fx:id="totalGames" fill="#737171" strokeType="OUTSIDE" strokeWidth="0.0" text="RESERVAS: X">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -110,21 +110,13 @@
             </TableView>
             <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="893.0" prefHeight="31.0" prefWidth="1221.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="33.0">
                <children>
-                  <Label prefHeight="30.0" prefWidth="84.0" text="Legenda:" textFill="#737171">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
+                  <Label prefHeight="30.0" prefWidth="92.0" text="LEGENDA:" textFill="#737171" />
                   <AnchorPane prefHeight="31.0" prefWidth="52.0">
                      <children>
                         <Pane layoutX="19.0" layoutY="3.0" prefHeight="22.0" prefWidth="23.0" style="-fx-background-color: #FF3D3D; -fx-background-radius: 5px;" />
                      </children>
                   </AnchorPane>
-                  <Text fx:id="totalGamesAllocated" fill="#737171" strokeType="OUTSIDE" strokeWidth="0.0" text="RESERVA DE HOJE (X)">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Text>
+                  <Text fx:id="totalGamesAllocated" fill="#737171" strokeType="OUTSIDE" strokeWidth="0.0" text="RESERVA DE HOJE (X)" />
                </children>
             </HBox>
          </children>

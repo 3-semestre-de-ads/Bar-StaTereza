@@ -80,6 +80,7 @@ public class FXMLSystemInsertGameController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         listCategoryGame();
         operationsCreateAndUpdate();
+        
     }    
     
    

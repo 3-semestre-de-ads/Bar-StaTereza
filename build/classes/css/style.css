@@ -1,0 +1,135 @@
+.buttonBlue{
+    -fx-text-fill: #ffffff;
+    -fx-background-color:  #3580C2;
+    -fx-background-radius:  35px;
+}
+.buttonBlue:hover{
+    -fx-text-fill: #3580C2;
+    -fx-background-color:  #ffffff;
+}
+.buttonBlue:pressed{
+    -fx-text-fill: #ffffff;
+    -fx-background-color:  #3580C2;
+}
+.buttonBlack{
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #323538;
+    -fx-background-radius: 35px;
+}
+.buttonBlack:hover{
+    -fx-text-fill: #323538;
+    -fx-background-color: #dddddd;
+}
+.buttonBlack:pressed{
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #323538;
+}
+.buttonGrey{
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #737171;
+    -fx-background-radius: 35px;
+}
+.buttonGrey:hover{
+    -fx-text-fill: #323538;
+    -fx-background-color: #dddddd;
+}
+.buttonGrey:pressed{
+     -fx-text-fill: #ffffff;
+    -fx-background-color: #737171;
+}
+
+/* Botões do menu principal */
+.buttonMenu{
+    -fx-text-fill: #ffffff;
+    -fx-background-color:  transparent;
+    -fx-background-radius:  0px;
+}
+.buttonMenu:hover{
+    -fx-text-fill: #ffffff;
+    -fx-background-color:  #202326;
+}
+.buttonMenu:pressed{
+    -fx-text-fill: #323538;
+    -fx-background-color:  #F1F1F1;
+}
+
+.buttonTransparent{
+    -fx-background-color: transparent;
+}
+
+/* Botão de dinheiro da tela de caixa */
+.buttonMoney{
+    -fx-text-fill: #ffffff;
+    -fx-background-color:  #51E775;
+    -fx-background-radius:  20px;
+}
+.buttonMoney:hover{
+    -fx-text-fill: #F5F983;
+    -fx-background-color:  #000000;
+}
+.buttonMoney:pressed{
+    -fx-text-fill: #ffffff;
+    -fx-background-color:  #51E775;
+}
+
+/* Botão de crédito da tela de caixa */
+.buttonCredit{
+    -fx-text-fill: #ffffff;
+    -fx-background-color:  #76C8FF;
+    -fx-background-radius:  20px;
+}
+.buttonCredit:hover{
+    -fx-text-fill: #76C8FF;
+    -fx-background-color:  #000000;
+    -fx-background-radius:  20px;
+}
+.buttonCredit:pressed{
+    -fx-text-fill: #ffffff;
+    -fx-background-color:  #76C8FF;
+    -fx-background-radius:  20px;
+}
+
+
+/* Botão de débito da tela de caixa*/
+.buttonDebit{
+    -fx-text-fill: #000000;
+    -fx-background-color:  #F5F983;
+    -fx-background-radius:  20px;
+}
+.buttonDebit:hover{
+    -fx-text-fill: #F5F983;
+    -fx-background-color:  #000000;
+}
+.buttonDebit:pressed{
+    -fx-text-fill: #000000;
+    -fx-background-color:  #F5F983;
+}
+
+
+/* Botão de finalizar a comanda na tela de caixa*/
+.buttonFinish{
+    -fx-text-fill: #ffffff;
+    -fx-background-color:  #186F2D;
+    -fx-background-radius:  20px;
+}
+.buttonFinish:hover{
+    -fx-text-fill: #ffffff;
+    -fx-background-color:  #000000;
+}
+.buttonFinish:pressed{
+    -fx-text-fill: #ffffff;
+    -fx-background-color:  #186F2D;
+}
+
+
+
+
+.systemTitleColor{
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #ADADAD;
+}
+
+/* Cor padrão de fundo de todas telas do menu - cor cinza */
+.defaultSystemBackground{
+    -fx-background-color:  #F1F1F1;
+}

@@ -5,6 +5,7 @@
  */
 package fxml;
 
+import classes.Product;
 import functions.SceneChange;
 import java.io.IOException;
 import java.net.URL;
@@ -31,6 +32,20 @@ public class FXMLSystemInsertProductController implements Initializable {
     @FXML
     private void loadSceneProducts() throws IOException {
         sceneChange.sceneTransition(stackPane, anchorPane, "/fxml/FXMLSystemProducts.fxml");
+    }
+    
+    // Variáveis do constructor.
+    private Product product;
+    private String typeFunction;
+
+    /**
+     * O contructor da classe FXMLSystemInsertProductController.
+     * @param product
+     * @param typeFunction
+     */
+    public FXMLSystemInsertProductController(Product product, String typeFunction) {
+        this.product = product;
+        this.typeFunction = typeFunction;
     }
     
     @Override

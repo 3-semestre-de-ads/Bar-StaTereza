@@ -60,7 +60,7 @@
                </children>
             </AnchorPane>
             <Pane prefHeight="14.0" prefWidth="284.0" style="-fx-background-color: #ffffff;" />
-            <Button mnemonicParsing="false" onAction="#loadSceneCashier" prefHeight="65.0" prefWidth="292.0" styleClass="buttonMenu" stylesheets="@../css/buttonsStyle.css" text="CAIXA" textFill="WHITE">
+            <Button fx:id="btnCashier" mnemonicParsing="false" onAction="#loadSceneCashier" prefHeight="65.0" prefWidth="292.0" styleClass="buttonMenu" stylesheets="@../css/style.css" text="CAIXA" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="5.0" top="5.0" />
                </VBox.margin>
@@ -71,7 +71,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button mnemonicParsing="false" onAction="#loadSceneReservations" prefHeight="65.0" prefWidth="287.0" styleClass="buttonMenu" stylesheets="@../css/buttonsStyle.css" text="RESERVAS" textFill="WHITE">
+            <Button fx:id="btnReservations" mnemonicParsing="false" onAction="#loadSceneReservations" prefHeight="65.0" prefWidth="287.0" styleClass="buttonMenu" stylesheets="@../css/style.css" text="RESERVAS" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="5.0" top="5.0" />
                </VBox.margin>
@@ -82,7 +82,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button mnemonicParsing="false" onAction="#loadSceneTables" prefHeight="65.0" prefWidth="297.0" styleClass="buttonMenu" stylesheets="@../css/buttonsStyle.css" text="MESAS" textFill="WHITE">
+            <Button fx:id="btnTables" mnemonicParsing="false" onAction="#loadSceneTables" prefHeight="65.0" prefWidth="297.0" styleClass="buttonMenu" stylesheets="@../css/style.css" text="MESAS" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="5.0" top="5.0" />
                </VBox.margin>
@@ -93,7 +93,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button mnemonicParsing="false" onAction="#loadSceneCommands" prefHeight="65.0" prefWidth="300.0" styleClass="buttonMenu" stylesheets="@../css/buttonsStyle.css" text="COMANDAS" textFill="WHITE">
+            <Button fx:id="btnCommands" mnemonicParsing="false" onAction="#loadSceneCommands" prefHeight="65.0" prefWidth="300.0" styleClass="buttonMenu" stylesheets="@../css/style.css" text="COMANDAS" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="5.0" top="5.0" />
                </VBox.margin>
@@ -104,7 +104,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button mnemonicParsing="false" onAction="#loadSceneProducts" prefHeight="65.0" prefWidth="301.0" styleClass="buttonMenu" stylesheets="@../css/buttonsStyle.css" text="PRODUTOS" textFill="WHITE">
+            <Button fx:id="btnProducts" mnemonicParsing="false" onAction="#loadSceneProducts" prefHeight="65.0" prefWidth="301.0" styleClass="buttonMenu" stylesheets="@../css/style.css" text="PRODUTOS" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="5.0" top="5.0" />
                </VBox.margin>
@@ -115,7 +115,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button mnemonicParsing="false" onAction="#loadSceneGames" prefHeight="65.0" prefWidth="300.0" styleClass="buttonMenu" stylesheets="@../css/buttonsStyle.css" text="JOGOS" textFill="WHITE">
+            <Button fx:id="btnGames" mnemonicParsing="false" onAction="#loadSceneGames" prefHeight="65.0" prefWidth="300.0" styleClass="buttonMenu" stylesheets="@../css/style.css" text="JOGOS" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="5.0" top="5.0" />
                </VBox.margin>
@@ -126,7 +126,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button mnemonicParsing="false" onAction="#loadSceneAnalyze" prefHeight="65.0" prefWidth="292.0" styleClass="buttonMenu" stylesheets="@../css/buttonsStyle.css" text="RELATÓRIO" textFill="WHITE">
+            <Button fx:id="btnReport" mnemonicParsing="false" onAction="#loadSceneAnalyze" prefHeight="65.0" prefWidth="292.0" styleClass="buttonMenu" stylesheets="@../css/style.css" text="RELATÓRIO" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="5.0" top="5.0" />
                </VBox.margin>
@@ -137,7 +137,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button mnemonicParsing="false" onAction="#loadSceneUsers" prefHeight="65.0" prefWidth="293.0" styleClass="buttonMenu" stylesheets="@../css/buttonsStyle.css" text="USUÁRIOS" textFill="WHITE">
+            <Button fx:id="btnUsers" mnemonicParsing="false" onAction="#loadSceneUsers" prefHeight="65.0" prefWidth="293.0" styleClass="buttonMenu" stylesheets="@../css/style.css" text="USUÁRIOS" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="30.0" top="5.0" />
                </VBox.margin>

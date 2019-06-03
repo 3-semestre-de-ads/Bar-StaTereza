@@ -8,7 +8,6 @@ public class Product {
     private int code;
     private String name;
     private String category;
-    private String type;
     private double price;
     private String description;
 
@@ -17,17 +16,19 @@ public class Product {
      * @param code - o valor inicial de code.
      * @param name - o valor inicial de name.
      * @param category - o valor inicial de category.
-     * @param type - o valor inicial de type.
      * @param price - o valor inicial de price.
      * @param description - o valor inicial de description.
      */
-    public Product(int code, String name, String category, String type, double price, String description) {
+    public Product(int code, String name, String category, double price, String description) {
         this.code = code;
         this.name = name;
         this.category = category;
-        this.type = type;
         this.price = price;
         this.description = description;
+    }
+
+    public Product(int aInt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -78,21 +79,6 @@ public class Product {
         this.category = category;
     }
 
-    /**
-     * retorna o valor de type.
-     * @return - o valor de type.
-     */
-    public String getType() {
-        return type;
-    }
-
-    /**
-     * inserir o valor de type.
-     * @param type - o valor de type.
-     */
-    public void setType(String type) {
-        this.type = type;
-    }
 
     /**
      * retorna o valor de price.

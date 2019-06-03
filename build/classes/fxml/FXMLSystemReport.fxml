@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.chart.BarChart?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <StackPane prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.FXMLSystemReportController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" StackPane.alignment="CENTER">
          <children>
-            <AnchorPane prefHeight="126.0" prefWidth="1280.0" styleClass="systemTitleColor" stylesheets="@../css/buttonsStyle.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <AnchorPane prefHeight="126.0" prefWidth="1280.0" styleClass="systemTitleColor" stylesheets="@../css/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
                   <Label alignment="CENTER" layoutX="509.0" layoutY="16.0" text="RELATÓRIO" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <font>
@@ -33,22 +32,20 @@
                         <Image url="@../images/btn_help_system.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="50.0" styleClass="buttonTransparent" stylesheets="@../css/buttonsStyle.css" StackPane.alignment="TOP_RIGHT">
+                  <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="50.0" styleClass="buttonTransparent" stylesheets="@../css/style.css" StackPane.alignment="TOP_RIGHT">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
                </children>
             </StackPane>
-            <PieChart fx:id="pieChart" layoutX="81.0" layoutY="223.0" />
-            <BarChart layoutX="671.0" layoutY="223.0">
-              <xAxis>
-                <CategoryAxis side="BOTTOM" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis side="LEFT" />
-              </yAxis>
-            </BarChart>
+            <VBox alignment="CENTER" layoutX="67.0" layoutY="219.0" prefHeight="541.0" prefWidth="673.0" spacing="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+               <children>
+                  <PieChart fx:id="pieChart" />
+                  <DatePicker fx:id="datePicker" />
+                  <Button mnemonicParsing="false" onAction="#calculateChart" text="Button" />
+               </children>
+            </VBox>
          </children>
       </AnchorPane>
    </children>
