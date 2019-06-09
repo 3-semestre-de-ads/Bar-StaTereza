@@ -4,4 +4,7 @@ Base do sistema: Nessa etapa o sistema tinha toda a sua interface montade e func
 tinham tambem já alguma das funções incias do sistema funcionando (Usuários,Login,Produtos).
 
 Atualização na aba jogos: Nessa etapa o sistema teve sua aba de jogos configurada e
-está funcional.
+está com todas as suas funções.
+
+Atualização na aba relatorios: Nessa etapa o sistema teve sua aba de relatorios configurada e
+está com todas as suas funções.
