@@ -1,0 +1,4 @@
+Descrição dos commits
+
+Base do sistema: Nessa etapa o sistema tinha toda a sua interface montade e funcional, 
+tinham tambem já alguma das funções incias do sistema funcionando (Usuários,Login,Produtos).
