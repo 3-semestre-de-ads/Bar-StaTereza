@@ -9,5 +9,8 @@ está com todas as suas funções.
 Atualização na aba relatorios: Nessa etapa o sistema teve sua aba de relatorios configurada e
 está com todas as suas funções.
 
-CRUD e Conexão ao banco de dados: Nessa etapa o sistema foi implementado o CRUD
+CRUD na conexão ao banco de dados: Nessa etapa o sistema foi implementado o CRUD
  na conexão ao banco de dados.
+
+CRUD em todas as classes:  Nessa etapa o sistema o CRUD foi implementado em todas as classes
+de negocios e tambem foram feitas correções de bugs do JavaFX.
