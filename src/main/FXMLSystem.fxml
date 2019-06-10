@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="borderpane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <VBox prefHeight="978.0" prefWidth="284.0" style="-fx-background-color: #323538;" BorderPane.alignment="CENTER">
+         <children>
+            <StackPane fx:id="stackPane">
+               <children>
+                  <AnchorPane fx:id="anchorPane" prefHeight="339.0" prefWidth="292.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="339.0" prefWidth="292.0">
+                           <children>
+                              <ImageView fitHeight="153.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/logo_company.png" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" top="15.0" />
+                                 </VBox.margin>
+                              </ImageView>
+                              <Text fx:id="textUser" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Isaías de França Leite" textAlignment="CENTER" wrappingWidth="290.99999994039536" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Lucida Bright Regular" size="24.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="7.5" />
+                                 </VBox.margin>
+                              </Text>
+                              <Text fx:id="textTypeOfUser" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="ADMINISTRADOR" textAlignment="CENTER" wrappingWidth="291.99999913573265" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Segoe UI" size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" top="7.5" />
+                                 </VBox.margin>
+                              </Text>
+                              <HBox alignment="CENTER" prefHeight="67.0" prefWidth="292.0" spacing="50.0">
+                                 <children>
+                                    <ImageView fitHeight="50.0" fitWidth="46.0" onMouseClicked="#loadSceneConfiguration" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/btn_config_user.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                    <ImageView fitHeight="50.0" fitWidth="46.0" onMouseClicked="#help" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/btn_help_user.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                    <ImageView fx:id="btnLogout" fitHeight="50.0" fitWidth="46.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/btn_exit_user.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+            <Pane prefHeight="14.0" prefWidth="284.0" style="-fx-background-color: #ffffff;" />
+            <Button fx:id="btnCashier" mnemonicParsing="false" onAction="#loadSceneCashier" prefHeight="65.0" prefWidth="292.0" styleClass="buttonMenu" stylesheets="@../css/style.css" text="CAIXA" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Monospaced Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnReservations" mnemonicParsing="false" onAction="#loadSceneReservations" prefHeight="65.0" prefWidth="296.0" styleClass="buttonMenu" stylesheets="@../css/style.css" text="RESERVAS" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Monospaced Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnTables" mnemonicParsing="false" onAction="#loadSceneTables" prefHeight="65.0" prefWidth="297.0" styleClass="buttonMenu" stylesheets="@../css/style.css" text="MESAS" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Monospaced Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnCommands" mnemonicParsing="false" onAction="#loadSceneCommands" prefHeight="65.0" prefWidth="300.0" styleClass="buttonMenu" stylesheets="@../css/style.css" text="COMANDAS" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Monospaced Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnProducts" mnemonicParsing="false" onAction="#loadSceneProducts" prefHeight="65.0" prefWidth="301.0" styleClass="buttonMenu" stylesheets="@../css/style.css" text="PRODUTOS" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Monospaced Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnGames" mnemonicParsing="false" onAction="#loadSceneGames" prefHeight="65.0" prefWidth="300.0" styleClass="buttonMenu" stylesheets="@../css/style.css" text="JOGOS" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Monospaced Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnReport" mnemonicParsing="false" onAction="#loadSceneReport" prefHeight="65.0" prefWidth="292.0" styleClass="buttonMenu" stylesheets="@../css/style.css" text="RELATÓRIOS" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Monospaced Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnUsers" mnemonicParsing="false" onAction="#loadSceneUsers" prefHeight="65.0" prefWidth="293.0" styleClass="buttonMenu" stylesheets="@../css/style.css" text="USUÁRIOS" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="30.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Monospaced Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <AnchorPane prefHeight="56.0" prefWidth="284.0" style="-fx-background-color: #D4D4D4;">
+               <children>
+                  <ImageView fitHeight="43.0" fitWidth="44.0" layoutX="121.0" layoutY="5.0" onMouseClicked="#about" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/btn_system_about.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>

@@ -1,0 +1,60 @@
+package cashier;
+
+import static interfaces.InterfaceCRUD.connectionDB;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+/**
+ * Classe responsável por definir os atributos e metódos necessários do caixa.
+ * @author Isaías de França Leite.
+ */
+public class Cashier{
+    
+    /**
+     * Função de listar todos os pedidos.
+     * @param search
+     * @param value
+     * @return
+     */
+    public ObservableList readDB(String search, int value){
+        ObservableList<Order> listOrder = FXCollections.observableArrayList();
+        ResultSet rs = null;
+        try {
+            if(value == 0){
+                rs = connectionDB.getConnection().createStatement().executeQuery("");
+            }
+            else{
+                rs = connectionDB.getConnection().createStatement().executeQuery("");
+            }
+            while(rs.next()){
+                listOrder.add(new Order(0,null,0,0));
+            }
+                    } catch (SQLException ex) {
+            Logger.getLogger(Cashier.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listOrder;
+    }
+    
+    /**
+     * Função de contar a quantidade de pedido na comanda.
+     * @return - resultado da operação.
+     */
+    public String countTotalOrder(String search){
+        String result = connectionDB.executeQuery("SELECT COUNT(*) FROM pedido p, itemPedido it, Produto pr where p.codPedido = it.codPedido and pr.codProduto = it.codProduto and p.codPedido = (select top 1 codPedido from Pedido where codComanda = "+search+" order by codPedido desc);");
+        return result;
+    }
+    
+    /**
+     * Função de calcular valor total da comanda.
+     * @param search - valor de busca.
+     * @return - resultado da operação.
+     */
+    public double totalOrder(String search){
+        double result = Double.parseDouble(connectionDB.executeQuery("SELECT ISNULL(SUM(it.qtdProduto*it.precoPedido),0) FROM pedido p, itemPedido it, Produto pr where p.codPedido = it.codPedido and pr.codProduto = it.codProduto and p.codPedido = (select top 1 codPedido from Pedido where codComanda = "+search+" order by codPedido desc);"));
+        return result;
+    }
+}

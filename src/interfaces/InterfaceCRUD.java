@@ -1,6 +1,6 @@
 package interfaces;
 
-import classes.ConnectionDB;
+import connection.ConnectionDB;
 import javafx.collections.ObservableList;
 
 /**

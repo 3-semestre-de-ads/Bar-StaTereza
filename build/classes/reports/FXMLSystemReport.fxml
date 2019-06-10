@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="parentContainer" prefHeight="996.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="reports.FXMLSystemReportController">
+   <children>
+      <AnchorPane fx:id="anchorRoot" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane prefHeight="126.0" prefWidth="1280.0" styleClass="systemTitleColor" stylesheets="@../css/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="509.0" layoutY="16.0" text="RELATÓRIOS" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <font>
+                        <Font name="Serif Regular" size="84.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <StackPane prefHeight="52.0" prefWidth="1280.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="135.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+                     <image>
+                        <Image url="@../images/btn_help_system.png" />
+                     </image>
+                  </ImageView>
+                  <Button mnemonicParsing="false" onAction="#help" prefHeight="51.0" prefWidth="50.0" styleClass="buttonTransparent" stylesheets="@../css/style.css" StackPane.alignment="TOP_RIGHT">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </StackPane>
+            <HBox alignment="CENTER" layoutX="14.0" layoutY="196.0" prefHeight="76.0" prefWidth="1214.0" spacing="100.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="33.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#loadSceneReport" prefHeight="57.0" prefWidth="168.0" style="-fx-background-radius: 5px;" styleClass="buttonBlack" stylesheets="@../css/style.css" text="STATUS" HBox.hgrow="ALWAYS">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#loadSceneReportSalesChart" prefHeight="57.0" prefWidth="168.0" style="-fx-background-radius: 5px;" styleClass="buttonGrey" stylesheets="@../css/style.css" text="Relatório de Vendas">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#loadSceneReportProductsChart" prefHeight="57.0" prefWidth="168.0" style="-fx-background-radius: 5px;" styleClass="buttonGrey" stylesheets="@../css/style.css" text="Relatório de Produtos">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" layoutX="19.0" layoutY="344.0" prefHeight="428.0" prefWidth="1245.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="33.0">
+               <children>
+                  <VBox prefHeight="661.0" prefWidth="308.0" spacing="50.0">
+                     <children>
+                        <VBox prefHeight="158.0" prefWidth="251.0" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="51.0" prefWidth="250.0" text="PRODUTOS" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="text01" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL DE PRODUTOS: " />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="158.0" prefWidth="251.0" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="51.0" prefWidth="250.0" text="JOGOS" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="text02" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL DE JOGOS:  " />
+                              <Text fx:id="text03" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL DE MESAS OCUPADAS: " />
+                              <Text fx:id="text04" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL DE MESAS LIVRES: " />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="661.0" prefWidth="321.0" spacing="50.0">
+                     <children>
+                        <VBox prefHeight="158.0" prefWidth="251.0" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="51.0" prefWidth="250.0" text="COMANDAS" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="text05" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL DE COMANDAS: " />
+                              <Text fx:id="text06" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL DE COMANDAS LIVRES:  " />
+                              <Text fx:id="text07" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL DE COMANDAS OCUPADAS: " />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="158.0" prefWidth="251.0" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="51.0" prefWidth="250.0" text="MESAS" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="text08" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL DE MESAS:  " />
+                              <Text fx:id="text09" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL DE MESAS OCUPADAS: " />
+                              <Text fx:id="text10" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL DE MESAS LIVRES: " />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="158.0" prefWidth="251.0" spacing="10.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="51.0" prefWidth="250.0" text="RESERVA" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="text11" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL DE RESERVAS: " />
+                              <Text fx:id="text12" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL DE RESERVAS PARA HOJE: " />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="138.0" prefWidth="242.0" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="51.0" prefWidth="250.0" text="USUÁRIOS" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="text13" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL DE USUÁRIOS: " />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="288.0" prefWidth="401.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="251.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="51.0" prefWidth="250.0" text="VENDAS" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="text14" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL DE VENDAS DO DIA: R$:  ">
+                                 <VBox.margin>
+                                    <Insets bottom="100.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RELATÓRIO (VENDAS)">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <DatePicker fx:id="datePicker">
+                                 <VBox.margin>
+                                    <Insets bottom="30.0" />
+                                 </VBox.margin>
+                              </DatePicker>
+                              <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="116.0" styleClass="buttonGrey" stylesheets="@../css/style.css" text="PDF">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

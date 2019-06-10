@@ -1,7 +1,7 @@
 Descrição dos commits
 
 Base do sistema: Nessa etapa o sistema teve toda a sua interface montade e funcional, 
-tinham tambem já alguma das funções incias do sistema funcionando (Usuários,Login,Produtos).
+tinham tambem já alguma das funções incias do sistema funcionando (Usuários,Produtos).
 
 Atualização na aba jogos: Nessa etapa o sistema teve sua aba de jogos configurada e
 está com todas as suas funções.
@@ -14,3 +14,6 @@ CRUD na conexão ao banco de dados: Nessa etapa o sistema foi implementado o CRUD
 
 CRUD em todas as classes:  Nessa etapa o sistema o CRUD foi implementado em todas as classes
 de negocios e tambem foram feitas correções de bugs do JavaFX.
+
+Login e correção de bugs: Nessa etapa o sistema a tela de login foi implementada e foram
+feitas correções em bugs de transição de tela.

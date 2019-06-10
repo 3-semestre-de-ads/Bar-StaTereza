@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane prefHeight="996.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cashier.FXMLSystemCashierController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" StackPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="126.0" prefWidth="1280.0" styleClass="systemTitleColor" stylesheets="@../css/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="509.0" layoutY="16.0" text="CAIXA" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <font>
+                        <Font name="Serif Regular" size="84.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <StackPane prefHeight="52.0" prefWidth="1280.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="135.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+                     <image>
+                        <Image url="@../images/btn_help_system.png" />
+                     </image>
+                  </ImageView>
+                  <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="50.0" styleClass="buttonTransparent" stylesheets="@../css/style.css" StackPane.alignment="TOP_RIGHT">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </StackPane>
+            <HBox layoutY="336.0" prefHeight="645.0" prefWidth="1280.0" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="593.0" prefWidth="829.0" spacing="20.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="21.0" prefWidth="1294.0" text="PEDIDOS DA COMANDA" textAlignment="CENTER">
+                           <font>
+                              <Font name="Rockwell" size="20.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="82.0" prefWidth="1210.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="77.0" prefWidth="326.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <TextField>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <StackPane prefHeight="82.0" prefWidth="57.0">
+                                       <children>
+                                          <ImageView fitHeight="45.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/btn_search.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="57.0" styleClass="buttonTransparent" stylesheets="@../css/style.css">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" opacity="0.71" prefHeight="77.0" prefWidth="414.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Text fill="#737171" strokeType="OUTSIDE" strokeWidth="0.0" text="PEDIDOS: X">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="77.0" prefWidth="326.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <ComboBox prefWidth="150.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <TableView prefHeight="478.0" prefWidth="732.0">
+                           <columns>
+                              <TableColumn prefWidth="200.0" text="CÓDIGO" />
+                              <TableColumn prefWidth="265.0" text="PRODUTO" />
+                              <TableColumn minWidth="0.0" prefWidth="123.0" text="QUANTIDADE" />
+                              <TableColumn minWidth="0.0" prefWidth="77.0" text="PREÇO" />
+                              <TableColumn minWidth="0.0" prefWidth="166.0" text="TOTAL" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="749.0" prefWidth="583.0" spacing="35.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="21.0" prefWidth="1294.0" text="FORMA DE PAGAMENTO" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Rockwell" size="20.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="123.0" prefWidth="583.0" spacing="20.0">
+                           <children>
+                              <Button fx:id="btnMoney" mnemonicParsing="false" onAction="#btnMoney" prefHeight="85.0" prefWidth="169.0" styleClass="buttonMoney" stylesheets="@../css/style.css" text="DINHEIRO" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button fx:id="btnCredit" mnemonicParsing="false" onAction="#btnCredit" prefHeight="85.0" prefWidth="169.0" styleClass="buttonCredit" stylesheets="@../css/style.css" text="CREDITO" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                              <Button fx:id="btnDebit" mnemonicParsing="false" onAction="#btnDebit" prefHeight="85.0" prefWidth="169.0" styleClass="buttonDebit" stylesheets="@../css/style.css" text="DÉBITO" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Button>
+                           </children>
+                        </HBox>
+                        <VBox fx:id="vbox" alignment="CENTER" prefHeight="200.0" prefWidth="477.0" spacing="40.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="21.0" prefWidth="1294.0" text="PAGAMENTO" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="Rockwell" size="20.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER" prefHeight="52.0" prefWidth="264.0">
+                                 <children>
+                                    <TextField fx:id="textFieldMoney">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <StackPane prefHeight="29.0" prefWidth="54.0">
+                                       <children>
+                                          <ImageView fitHeight="42.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/btn_calculate.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Button mnemonicParsing="false" onAction="#calculeChange" prefHeight="66.0" prefWidth="54.0" styleClass="buttonTransparent" stylesheets="@../css/style.css">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </Button>
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </HBox>
+                              <VBox prefHeight="112.0" prefWidth="477.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="66.0" prefWidth="457.0" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <Label prefHeight="21.0" prefWidth="1294.0" text="TROCO" textAlignment="CENTER">
+                                             <font>
+                                                <Font name="Rockwell" size="44.0" />
+                                             </font>
+                                          </Label>
+                                          <Text fx:id="textChange" strokeType="OUTSIDE" strokeWidth="0.0" text="R$: 0,00 ">
+                                             <font>
+                                                <Font name="Rockwell" size="44.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <Pane prefHeight="55.0" prefWidth="477.0" style="-fx-background-color: #000000;">
+                                       <padding>
+                                          <Insets top="5.0" />
+                                       </padding>
+                                    </Pane>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </VBox>
+                              <Button mnemonicParsing="false" prefHeight="88.0" prefWidth="185.0" styleClass="buttonFinish" stylesheets="@../css/style.css" text="FINALIZAR">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <font>
+                                    <Font name="System Bold" size="23.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="28.0" layoutY="195.0" prefHeight="141.0" prefWidth="1232.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+               <children>
+                  <VBox prefHeight="141.0" prefWidth="732.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="317.0" text="COMANDA *" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="Rockwell" size="20.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="732.0">
+                           <children>
+                              <TextField fx:id="orderPad">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button mnemonicParsing="false" onAction="#calculateOderPad" prefHeight="43.0" prefWidth="107.0" styleClass="buttonGrey" stylesheets="@../css/style.css" text="CALCULAR">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="126.0" prefWidth="489.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="21.0" prefWidth="1294.0" text="VALOR TOTAL" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="Rockwell" size="20.0" />
+                           </font>
+                        </Label>
+                        <StackPane prefHeight="64.0" prefWidth="490.0">
+                           <children>
+                              <Text fx:id="totalOrderPad" fill="#39b056" strokeType="OUTSIDE" strokeWidth="0.0" text="R$: 0,00" textAlignment="CENTER" wrappingWidth="489.6708984375">
+                                 <font>
+                                    <Font name="Rockwell" size="89.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

@@ -1,6 +1,5 @@
 package functions;
 
-import fxml.FXMLSystemInsertGameController;
 import java.io.IOException;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;

@@ -1,4 +1,4 @@
-package fxml;
+package login;
 
 import functions.SceneChange;
 import java.io.IOException;
@@ -11,25 +11,24 @@ import javafx.scene.layout.StackPane;
 
 /**
  * Classe responsável por estabelecer a conexão entre a classe UpdateSystem e a interface de gráfica de Login-Update.
- * @author Isaías de França Leite
+ * @author Isaías de França Leite.
  */
 public class FXMLLoginUpdateController implements Initializable {
 
+    // Transição de tela.
     SceneChange sceneChange = new SceneChange();
+    @FXML private AnchorPane anchorRoot;
+    @FXML private StackPane parentContainer;
     
-    @FXML
-    private AnchorPane anchorRoot;
-    @FXML
-    private StackPane parentContainer;
- 
+    /**
+     * Transição de tela: Tela de FXMLLoginHome.
+    */
     @FXML
     private void loadSceneHome() throws IOException {
-        sceneChange.sceneTransition(parentContainer, anchorRoot, "/fxml/FXMLLoginHome.fxml");
+        sceneChange.sceneTransition(parentContainer, anchorRoot, "/login/FXMLLoginHome.fxml");
     }
             
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
     }  
-    
 }

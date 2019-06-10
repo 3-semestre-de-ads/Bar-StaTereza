@@ -84,7 +84,7 @@
     -fx-background-radius:  20px;
 }
 .buttonMoney:hover{
-    -fx-text-fill: #F5F983;
+    -fx-text-fill: #51E775;
     -fx-background-color:  #000000;
 }
 .buttonMoney:pressed{
