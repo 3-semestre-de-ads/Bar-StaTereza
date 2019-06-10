@@ -20,3 +20,6 @@ feitas correções em bugs de transição de tela.
 
 Graficos dinamicos : Nessa etapa o sistema foram adicionados graficos dinamicos para serem
 utilizados nas telas de relatorios.
+
+Atualização e incrementos nas classes : Nessa etapa o sistema foram implementadas
+mais funções para as classes.
