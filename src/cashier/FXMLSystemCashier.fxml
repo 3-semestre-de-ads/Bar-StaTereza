@@ -95,13 +95,13 @@
                               </HBox>
                            </children>
                         </HBox>
-                        <TableView prefHeight="478.0" prefWidth="732.0">
+                        <TableView fx:id="tableOrder" prefHeight="478.0" prefWidth="732.0">
                            <columns>
-                              <TableColumn prefWidth="200.0" text="CÓDIGO" />
-                              <TableColumn prefWidth="265.0" text="PRODUTO" />
-                              <TableColumn minWidth="0.0" prefWidth="123.0" text="QUANTIDADE" />
-                              <TableColumn minWidth="0.0" prefWidth="77.0" text="PREÇO" />
-                              <TableColumn minWidth="0.0" prefWidth="166.0" text="TOTAL" />
+                              <TableColumn fx:id="tableColumnCodeOrder" prefWidth="200.0" text="CÓDIGO" />
+                              <TableColumn fx:id="tableColumnNameProduct" prefWidth="265.0" text="PRODUTO" />
+                              <TableColumn fx:id="tableColumnAmountProduct" minWidth="0.0" prefWidth="123.0" text="QUANTIDADE" />
+                              <TableColumn fx:id="tableColumnPriceProduct" minWidth="0.0" prefWidth="77.0" text="PREÇO" />
+                              <TableColumn fx:id="tableColumnTotalOrder" minWidth="0.0" prefWidth="166.0" text="TOTAL" />
                            </columns>
                            <columnResizePolicy>
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

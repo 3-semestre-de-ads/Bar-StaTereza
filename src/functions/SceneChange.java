@@ -63,7 +63,6 @@ public class SceneChange {
         timeline.play();
     }
     
-    
     /**
      * Realizar a transição entre telas.
      * @param borderpane - É componente principal da tela.
@@ -80,13 +79,17 @@ public class SceneChange {
         borderpane.setCenter(root);
     }
     
-   public void sceneTransition(BorderPane borderpane, FXMLLoader fxmlloader)
+    /**
+     * Realizar a transição entre telas.
+     * @param borderpane - É componente principal da tela.
+     * @param fxmlloader - É o endereço da próxima tela.
+     */
+    public void sceneTransition(BorderPane borderpane, FXMLLoader fxmlloader)
     {
         Parent root = null;
         try {
             root = fxmlloader.load();
         } catch (IOException ex) {
-            //Logger.getLogger(FXMLSystemGameController.class.getName()).log(Level.SEVERE, null, ex);
         }
         borderpane.setCenter(root);
     }

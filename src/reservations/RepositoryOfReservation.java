@@ -1,6 +1,5 @@
 package reservations;
 
-import connection.ConnectionDB;
 import interfaces.InterfaceCRUD;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,8 +23,8 @@ public class RepositoryOfReservation implements InterfaceCRUD{
     private List<String> listTables = new ArrayList<>();
     
     /**
-     *
-     * @return
+     * Função de inserir reserva.
+     * @return - resultado da operação.
      */
     public String createDB(){
         sql = "INSERT INTO Reserva (codMesa, nomeCliente, dataReserva, observacao) VALUES (?,?,?,?)";
@@ -50,8 +49,8 @@ public class RepositoryOfReservation implements InterfaceCRUD{
     }
     
     /**
-     *
-     * @return
+     * Função de listar reserva.
+     * @return - resultado da operação.
      */
     public ObservableList readDB(String search, int value){
         ObservableList<Reservation> listReservation = FXCollections.observableArrayList();
@@ -61,7 +60,7 @@ public class RepositoryOfReservation implements InterfaceCRUD{
                 rs = connectionDB.getConnection().createStatement().executeQuery("SELECT * FROM Reserva");
             }
             else{
-                rs = connectionDB.getConnection().createStatement().executeQuery("SELECT * FROM Reserva WHERE codMesa LIKE '%"+search+"%' OR nomeCliente LIKE '%"+search+"%' OR dataReserva LIKE '%"+search+"%' OR observacao LIKE '%"+search+"%'");
+                rs = connectionDB.getConnection().createStatement().executeQuery("SELECT * FROM Reserva WHERE codReserva LIKE '%"+search+"%' OR codMesa LIKE '%"+search+"%' OR nomeCliente LIKE '%"+search+"%' OR dataReserva LIKE '%"+search+"%' OR observacao LIKE '%"+search+"%'");
             }
             while(rs.next()){
                listReservation.add(new Reservation(rs.getInt("codReserva"),rs.getInt("codMesa"),rs.getString("nomeCliente"),rs.getDate("dataReserva"),rs.getString("observacao")));
@@ -73,8 +72,8 @@ public class RepositoryOfReservation implements InterfaceCRUD{
     }
     
     /**
-     *
-     * @return
+     * Função de alterar reserva.
+     * @return - resultado da operação.
      */
     public String updateDB(){
         sql = "UPDATE Reserva SET codMesa = ?, nomeCliente = ?, dataReserva = ?, observacao = ? WHERE codReserva = ?";
@@ -99,8 +98,8 @@ public class RepositoryOfReservation implements InterfaceCRUD{
     }
         
     /**
-     *
-     * @return
+     * Função de deletar reserva.
+     * @return - resultado da operação.
      */
     public String deleteDB(){
        sql = "DELETE FROM Reserva WHERE codReserva = ?";
@@ -120,8 +119,8 @@ public class RepositoryOfReservation implements InterfaceCRUD{
     }
     
     /**
-     *
-     * @return
+     * Função que listar todas as mesas.
+     * @return - resultado da operação.
      */
     public ObservableList<String> tables(){
         ObservableList<String> observableListTables = FXCollections.observableArrayList();
@@ -140,19 +139,28 @@ public class RepositoryOfReservation implements InterfaceCRUD{
     }
     
     /**
-     *
-     * @return
+     * Função que calcular total de reserva.
+     * @return - valor pesquisado.
      */
     public String countTotalReservation(){
         String result = connectionDB.executeQuery("SELECT COUNT(*) FROM Reserva");
         return result;
     }
     
+    /**
+     * Função que calcular total da reserva.
+     * @param search - valor pesquisado.
+     * @return 
+     */
     public String countTotalReservation(String search){
         String result = connectionDB.executeQuery("SELECT COUNT(*) FROM Reserva WHERE codMesa LIKE '%"+search+"%' OR nomeCliente LIKE '%"+search+"%' OR dataReserva LIKE '%"+search+"%' OR observacao LIKE '%"+search+"%'");
         return result;
     }
     
+    /**
+     * Função que calcular o total de reserva do dia.
+     * @return - valor pesquisado.
+     */
     public String countTotalReservationToday(){
         String result = connectionDB.executeQuery("SELECT COUNT(*) FROM Reserva WHERE dataReserva = CONVERT(date,GETDATE())");
         return result;

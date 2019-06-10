@@ -1,43 +1,12 @@
 package cashier;
 
 import static interfaces.InterfaceCRUD.connectionDB;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 /**
  * Classe responsável por definir os atributos e metódos necessários do caixa.
  * @author Isaías de França Leite.
  */
 public class Cashier{
-    
-    /**
-     * Função de listar todos os pedidos.
-     * @param search
-     * @param value
-     * @return
-     */
-    public ObservableList readDB(String search, int value){
-        ObservableList<Order> listOrder = FXCollections.observableArrayList();
-        ResultSet rs = null;
-        try {
-            if(value == 0){
-                rs = connectionDB.getConnection().createStatement().executeQuery("");
-            }
-            else{
-                rs = connectionDB.getConnection().createStatement().executeQuery("");
-            }
-            while(rs.next()){
-                listOrder.add(new Order(0,null,0,0));
-            }
-                    } catch (SQLException ex) {
-            Logger.getLogger(Cashier.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return listOrder;
-    }
     
     /**
      * Função de contar a quantidade de pedido na comanda.

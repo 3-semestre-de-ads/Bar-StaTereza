@@ -1,32 +1,34 @@
 package orderpads;
 
 import products.RepositoryOfProducts;
-import interfaces.InterfaceCRUD;
+import static interfaces.InterfaceCRUD.connectionDB;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
- *
- * @author isaia
+ * Classe responsável por definir todos atributos e metódos da comanda.
+ * @author Isaías de França Leite
  */
-public class RepositoryOfOrderPad implements InterfaceCRUD{
+public class RepositoryOfOrderPad {
 
     private OrderPad orderPad;
     private PreparedStatement statement;
     private String sql;
-    
-    
-    @Override
-    public String createDB() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    private List<String> listTables = new ArrayList<>();
 
-    @Override
+    /**
+     * Função de listar comandas.
+     * @param search - valor pesquisado.
+     * @param value - tipo de pesquisa.
+     * @return - resultado da operação.
+     */
     public ObservableList readDB(String search, int value) {
         ObservableList<OrderPad> listOrderPad = FXCollections.observableArrayList();
         ResultSet rs = null;
@@ -35,7 +37,7 @@ public class RepositoryOfOrderPad implements InterfaceCRUD{
                 rs = connectionDB.getConnection().createStatement().executeQuery("SELECT * FROM Comanda");
             }
             else{
-                rs = connectionDB.getConnection().createStatement().executeQuery("SELECT * FROM Comanda");
+                rs = connectionDB.getConnection().createStatement().executeQuery("SELECT * FROM Comanda WHERE codComanda ="+search);
             }
             while(rs.next()){
                 listOrderPad.add(new OrderPad(rs.getInt("codComanda"), rs.getString("statusComanda")));
@@ -45,25 +47,76 @@ public class RepositoryOfOrderPad implements InterfaceCRUD{
         }
         return listOrderPad;
     }
-
-    @Override
-    public String updateDB() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String deleteDB() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    /**
+     * Função de adicionar pedido.
+     * @return - resultado da operação. 
+     */
+    public String addOrder(String codeTable, String codeOrderPad){
+        sql = "insert into Pedido(codMesa,codComanda) values(?,?)";
+        try {
+            statement = connectionDB.getConnection().prepareStatement(sql);
+            statement.setString(1, codeTable);
+            statement.setString(2, codeOrderPad);
+            int result = statement.executeUpdate();
+            
+            if(result == 1){
+                return "CREATE";
+            }
+            else
+                return "ERROR";
+        } catch (SQLException ex) {
+            return "ERROR: "+ex.toString();
+        }
     }
     
+    /**
+     * Função de alterar o status da comanda para 1
+     * @param string
+     * @return - resultado da operação.
+     */
+    public String statusOrderPad(String codeOrderPad){
+        sql = "update Comanda set statusComanda = 1 where codComanda = ?";
+        try {
+            statement = connectionDB.getConnection().prepareStatement(sql);
+            statement.setString(1, codeOrderPad);
+            int result = statement.executeUpdate();
+            
+            if(result == 1){
+                return "UPDATE";
+            }
+            else
+                return "ERROR";
+        } catch (SQLException ex) {
+            return "ERROR: "+ex.toString();
+        }
+    }
+    
+        /**
+     * Função de calcular o total de comanda.
+     * @return - resultado da operação. 
+     */
     public String countTotalOrderPadInUse(){
         String result = connectionDB.executeQuery("SELECT COUNT(*) FROM Comanda WHERE statusComanda = 1");
         return result;
     }
     
-        
+    /**
+     * Função de calcular o total de comanda.
+     * @return - resultado da operação. 
+     */
     public String countTotalOrderPad(){
         String result = connectionDB.executeQuery("SELECT COUNT(*) FROM Comanda");
+        return result;
+    }
+    
+    /**
+     * Função de calcular o total da comanda.
+     * @param search - valor procurado.
+     * @return - resultado da operação. 
+     */
+    public String countTotalOrderPad(String search){
+        String result = connectionDB.executeQuery("SELECT COUNT(*) FROM Comanda WHERE codComanda = "+search);
         return result;
     }
     

@@ -17,3 +17,6 @@ de negocios e tambem foram feitas correções de bugs do JavaFX.
 
 Login e correção de bugs: Nessa etapa o sistema a tela de login foi implementada e foram
 feitas correções em bugs de transição de tela.
+
+Graficos dinamicos : Nessa etapa o sistema foram adicionados graficos dinamicos para serem
+utilizados nas telas de relatorios.

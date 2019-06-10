@@ -228,7 +228,6 @@ public class FXMLSystemProductsController implements Initializable {
             return cell;
         };
         tableColumnDelete.setCellFactory(cellFactoryDelete);
-        
         tableProducts.setItems(repositoryOfProducts.readDB(search, value)); 
     }
     

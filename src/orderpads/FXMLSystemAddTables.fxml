@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="996.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <AnchorPane fx:id="anchorPane" styleClass="defaultSystemBackground" stylesheets="@../css/style.css">
+         <children>
+            <AnchorPane prefHeight="126.0" prefWidth="1280.0" styleClass="systemTitleColor" stylesheets="@../css/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="509.0" layoutY="16.0" text="ADICIONAR MESA" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <font>
+                        <Font name="Serif Regular" size="84.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <StackPane prefHeight="52.0" prefWidth="1260.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="135.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_RIGHT">
+                     <image>
+                        <Image url="@../images/btn_help_system.png" />
+                     </image>
+                  </ImageView>
+                  <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="50.0" styleClass="buttonTransparent" stylesheets="@../css/style.css" StackPane.alignment="TOP_RIGHT">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </StackPane>
+            <VBox alignment="CENTER" layoutX="33.0" layoutY="413.0" prefHeight="280.0" prefWidth="1214.0" spacing="20.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="33.0">
+               <children>
+                  <Text fx:id="textOrderPad" strokeType="OUTSIDE" strokeWidth="0.0" text="COMANDA: X">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Text>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="1214.0" spacing="20.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MESA:">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Text>
+                        <ComboBox fx:id="comboBoxTable" prefHeight="31.0" prefWidth="94.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="169.0" prefWidth="1214.0" spacing="50.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#loadSceneOrderPad" prefHeight="64.0" prefWidth="176.0" styleClass="buttonBlack" stylesheets="@../css/style.css" text="CANCELAR">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#loadSceneOrders" prefHeight="64.0" prefWidth="176.0" styleClass="buttonGrey" stylesheets="@../css/style.css" text="ADICIONAR">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

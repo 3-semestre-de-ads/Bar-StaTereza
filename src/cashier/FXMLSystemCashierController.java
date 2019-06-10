@@ -5,15 +5,32 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import orders.Order;
+import orders.RepositoryOfOrders;
 
 /**
  * Classe responsável por estabelecer a conexão entre a classe Cashier e a interface de gráfica de cashier.
  * @author Isaías de França Leite
  */
 public class FXMLSystemCashierController implements Initializable {
+    
+    // Instanciar de pedido.
+    RepositoryOfOrders repositoryOfOrders = new RepositoryOfOrders();
+    
+    // Tabela de pedidos
+    @FXML 
+    private TableView<Order> tableOrder;
+    @FXML private TableColumn<Order, String> tableColumnCodeOrder;
+    @FXML private TableColumn<Order, String> tableColumnNameProduct;
+    @FXML private TableColumn<Order, String> tableColumnAmountProduct;
+    @FXML private TableColumn<Order, String> tableColumnPriceProduct;
+    @FXML private TableColumn<Order, String> tableColumnTotalOrder;
     
     // Botões
     @FXML Button btnMoney;
@@ -52,9 +69,12 @@ public class FXMLSystemCashierController implements Initializable {
      */
     private void totalOrder(){
         if(!"".equals(orderPad.getText())){
+            repositoryOfOrders.codeOrderPad = orderPad.getText();
+            listOrders(null, 0);
             totalOrderPad.setText("R$: "+String.format("%.2f", cashier.totalOrder(orderPad.getText())));
         }
         else{
+            tableOrder.setItems(null);
             totalOrderPad.setText("R$: 0,00");
         }
     }
@@ -93,5 +113,19 @@ public class FXMLSystemCashierController implements Initializable {
         btnMoney.setStyle("");
         btnCredit.setStyle("");
         btnDebit.setStyle("-fx-text-fill: #F5F983; -fx-background-color:  #000000;");
-    }  
+    }
+    
+     /**
+     * Função de listar pedidos;
+     * @param search
+     * @param value 
+     */
+    private void listOrders(String search, int value){
+        tableColumnCodeOrder.setCellValueFactory(new PropertyValueFactory<>("code"));
+        tableColumnNameProduct.setCellValueFactory(new PropertyValueFactory<>("productName"));
+        tableColumnAmountProduct.setCellValueFactory(new PropertyValueFactory<>("amount"));
+        tableColumnPriceProduct.setCellValueFactory(new PropertyValueFactory<>("price"));
+        tableColumnTotalOrder.setCellValueFactory(new PropertyValueFactory<>("total"));
+        tableOrder.setItems(repositoryOfOrders.readDB(search, value));
+    }
 }

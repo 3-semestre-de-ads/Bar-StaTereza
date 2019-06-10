@@ -48,16 +48,25 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#loadSceneReportSalesChart" prefHeight="57.0" prefWidth="168.0" style="-fx-background-radius: 5px;" styleClass="buttonBlack" stylesheets="@../css/style.css" text="Relatório de Vendas">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#loadSceneReportProductsChart" prefHeight="57.0" prefWidth="168.0" style="-fx-background-radius: 5px;" styleClass="buttonGrey" stylesheets="@../css/style.css" text="Relatório de Produtos">
+                  <Button mnemonicParsing="false" onAction="#loadSceneReportProductsChart" prefHeight="57.0" prefWidth="177.0" style="-fx-background-radius: 5px;" styleClass="buttonGrey" stylesheets="@../css/style.css" text="Relatório de Produtos">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
                   </Button>
                </children>
             </HBox>
