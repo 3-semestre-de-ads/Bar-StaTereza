@@ -80,13 +80,34 @@ public class FXMLSystemProductOrderController implements Initializable {
     SceneChange sceneChange = new SceneChange();
     @FXML private AnchorPane anchorPane;
     @FXML private StackPane stackPane;
+    
+    // Comanda
+    private OrderPad orderPad;
+    
+    /**
+     * Constructor da Classe FXMLSystemProductOrderController
+     */
+    public FXMLSystemProductOrderController(OrderPad orderPad){
+        this.orderPad = orderPad;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         listProducts(null,0);
         filter();
-    }    
-      /**
+    } 
+    
+    /**
+     * Transição de Tela: Tela de Orders
+     * @throws IOException 
+     */
+    @FXML private void loadSceneOrders() throws IOException{
+        FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("/orderpads/FXMLSystemOrders.fxml"));
+        fxmlloader.setController(new FXMLSystemOrdersController(orderPad));
+        sceneChange.sceneTransition(stackPane, anchorPane, fxmlloader);
+    }
+    
+    /**
      * Função responsável contar quantidade de produtos cadastrados.
      */
     private void countTotalProducts(){

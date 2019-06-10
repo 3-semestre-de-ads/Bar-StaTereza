@@ -9,7 +9,7 @@ import javafx.collections.ObservableList;
  */
 public interface InterfaceCRUD {
     
-    public ConnectionDB connectionDB = new ConnectionDB();;
+    public ConnectionDB connectionDB = new ConnectionDB();
     
     /**
      * Função responsável por inserir os dados no banco de dados

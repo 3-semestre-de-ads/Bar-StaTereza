@@ -49,7 +49,7 @@ public class RepositoryOfOrderPad {
     }
     
     /**
-     * Função de adicionar pedido.
+     * Função de vincular comanda na mesa (Criar um pedido).
      * @return - resultado da operação. 
      */
     public String addOrder(String codeTable, String codeOrderPad){

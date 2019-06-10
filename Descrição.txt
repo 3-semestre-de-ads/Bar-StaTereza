@@ -23,3 +23,6 @@ utilizados nas telas de relatorios.
 
 Atualização e incrementos nas classes : Nessa etapa o sistema foram implementadas
 mais funções para as classes.
+
+Sistema final: Todas implementações necessárias das telas de usuário, relatório, produtos, 
+jogos, reserva e login finalizadas e tambem correções de bugs.

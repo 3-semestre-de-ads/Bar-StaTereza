@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -69,8 +70,14 @@ public class FXMLSystemOrdersController implements Initializable {
         sceneChange.sceneTransition(stackPane, anchorPane, "/orderpads/FXMLSystemOrderPad.fxml");
     }
     
+    /**
+     * Transição de Tela: Tela de ProductOrder.
+     * @throws IOException 
+     */
     @FXML private void loadSceneProductOrder() throws IOException{
-        sceneChange.sceneTransition(stackPane, anchorPane, "/orderpads/FXMLSystemProductOrder.fxml");
+        FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("/orderpads/FXMLSystemProductOrder.fxml"));
+        fxmlloader.setController(new FXMLSystemProductOrderController(orderPad));
+        sceneChange.sceneTransition(stackPane, anchorPane, fxmlloader);
     }
     
     /**
