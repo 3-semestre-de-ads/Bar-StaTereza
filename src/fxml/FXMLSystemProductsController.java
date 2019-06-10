@@ -4,19 +4,27 @@ import classes.Product;
 import functions.SceneChange;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
@@ -34,10 +42,10 @@ public class FXMLSystemProductsController implements Initializable {
     RepositoryOfProducts repositoryOfProducts = new RepositoryOfProducts();
     
     // Mensagem de confirmação para alterar ou deletar produtos.
-    Alert alertSystem = new Alert(Alert.AlertType.CONFIRMATION);
+    Alert alertCofirmation= new Alert(Alert.AlertType.CONFIRMATION);
     
     // Mensagem de informação de erros.
-    Alert alertSystemInformation = new Alert(Alert.AlertType.INFORMATION);
+    Alert alertInformation = new Alert(Alert.AlertType.INFORMATION);
     
     // TableView para visualizar todos produtos.
     @FXML 
@@ -50,8 +58,16 @@ public class FXMLSystemProductsController implements Initializable {
     @FXML private TableColumn tableColumnUpdate;
     @FXML private TableColumn tableColumnDelete;
     
+    // Filtro
+    @FXML private ComboBox comboBoxFilter;
+    private List<String> listFilter = new ArrayList<>();
+    ObservableList<String> observableListFilter = FXCollections.observableArrayList();
+    
     // Valor total de produtos cadastrados.
     @FXML private Text totalProducts;
+    
+    // Pesquisar.
+    @FXML private TextField searchProduct;
     
     // Transição de tela.
     SceneChange sceneChange = new SceneChange();
@@ -60,7 +76,8 @@ public class FXMLSystemProductsController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        listProducts();
+        listProducts(null,0);
+        filter();
     }
     
     // Função responsável por fazer a transição para tela de inserir produtos.
@@ -75,10 +92,45 @@ public class FXMLSystemProductsController implements Initializable {
         totalProducts.setText("PRODUTOS: "+repositoryOfProducts.countTotalProducts());
     }
     
+        
+    //
+    @FXML private void search(){
+        if(searchProduct.getText().equals("")){
+            alertInformation.setContentText("Preencha o campo de pesquisa");
+            alertInformation.showAndWait();
+        }
+        else{
+            comboBoxFilter.getSelectionModel().select("PERSONALIZADO");
+            listProducts(searchProduct.getText(),1);
+            totalProducts.setText("PRODUTOS: "+repositoryOfProducts.countTotalProducts(searchProduct.getText()));
+        }
+    }
+    
+    /**
+     *
+     */
+    public void filter(){
+        listFilter.add("TODOS");
+        listFilter.add("PERSONALIZADO");
+        observableListFilter = FXCollections.observableArrayList(listFilter); 
+        comboBoxFilter.setItems(observableListFilter);
+        comboBoxFilter.getSelectionModel().selectFirst();
+        comboBoxFilter.setOnAction(eventFilter);
+    }
+    
+    // Seleção de evento.
+    private EventHandler<ActionEvent> eventFilter = 
+             (ActionEvent e) -> {
+        if(comboBoxFilter.getValue().toString().equals("TODOS")){
+            searchProduct.setText(null);
+            listProducts(null,0);
+        }
+    };
+    
     // Função responsável por listar todos produtos no TableView.
-    private void listProducts(){
+    private void listProducts(String search, int value){
         countTotalProducts();
-        tableColumnCodeProduct.setCellValueFactory(new PropertyValueFactory<>(""));
+        tableColumnCodeProduct.setCellValueFactory(new PropertyValueFactory<>("code"));
         tableColumnNameProduct.setCellValueFactory(new PropertyValueFactory<>("name"));
         tableColumnCategoryProduct.setCellValueFactory(new PropertyValueFactory<>("category"));
         tableColumnPriceProduct.setCellValueFactory(new PropertyValueFactory<>("price"));
@@ -101,10 +153,10 @@ public class FXMLSystemProductsController implements Initializable {
                         final Button buttonUpdate = new Button("EDITAR");
                         buttonUpdate.setOnAction(event -> {
                             Product product = getTableView().getItems().get(getIndex());
-                            alertSystem.setTitle("Editar Produto");
-                            alertSystem.setHeaderText(null);
-                            alertSystem.setContentText("Tem certeza que deseja editar esse produto ?");
-                            Optional <ButtonType> actionDelete = alertSystem.showAndWait();
+                            alertCofirmation.setTitle("Editar Produto");
+                            alertCofirmation.setHeaderText(null);
+                            alertCofirmation.setContentText("Tem certeza que deseja editar esse produto ?");
+                            Optional <ButtonType> actionDelete = alertCofirmation.showAndWait();
                             // Verificar se o botão Ok foi pressionado.
                             if(actionDelete.get() == ButtonType.OK){
                                 try {
@@ -140,19 +192,19 @@ public class FXMLSystemProductsController implements Initializable {
                     {
                         final Button buttonUpdate = new Button("DELETAR");
                         buttonUpdate.setOnAction(event -> {
-                            alertSystem.setTitle("Deletar Produto");
-                            alertSystem.setHeaderText(null);
-                            alertSystem.setContentText("Tem certeza que deseja deletar esse produto ?");
-                            Optional <ButtonType> actionDelete = alertSystem.showAndWait();
+                            alertCofirmation.setTitle("Deletar Produto");
+                            alertCofirmation.setHeaderText(null);
+                            alertCofirmation.setContentText("Tem certeza que deseja deletar esse produto ?");
+                            Optional <ButtonType> actionDelete = alertCofirmation.showAndWait();
                             if(actionDelete.get() == ButtonType.OK){
                                 // Verificar se o botão Ok foi pressionado.
                                 repositoryOfProducts.product = new Product(getTableView().getItems().get(getIndex()).getCode(),null,null,0,null);
                                 String result = repositoryOfProducts.deleteDB();
                                 if(!result.equals("DELETE")){
-                                    alertSystemInformation.setContentText("Produto Utilizado");
-                                    alertSystemInformation.showAndWait();
+                                    alertInformation.setContentText("Produto Utilizado");
+                                    alertInformation.showAndWait();
                                 }
-                                listProducts();
+                                listProducts(search, value);
                             }
                         });
                         setGraphic(buttonUpdate);
@@ -163,6 +215,6 @@ public class FXMLSystemProductsController implements Initializable {
         };
         tableColumnDelete.setCellFactory(cellFactoryDelete);
         
-        tableProducts.setItems(repositoryOfProducts.readDB()); 
+        tableProducts.setItems(repositoryOfProducts.readDB(search, value)); 
     } 
 }

@@ -8,7 +8,7 @@ import java.util.Date;
  */
 public class Order {
     private int code;
-    private Command command;
+    private OrderPad command;
     private Product product;
     private int amount;
     private String observation;
@@ -23,7 +23,7 @@ public class Order {
      * @param observation - o valor inicial de observation.
      * @param date - o valor inicial de date
      */
-    public Order(int code, Command command, Product product, int amount, String observation, Date date) {
+    public Order(int code, OrderPad command, Product product, int amount, String observation, Date date) {
         this.code = code;
         this.command = command;
         this.product = product;
@@ -52,7 +52,7 @@ public class Order {
      * retorna o valor de command.
      * @return - o valor de command.
      */
-    public Command getCommand() {
+    public OrderPad getCommand() {
         return command;
     }
 
@@ -60,7 +60,7 @@ public class Order {
      * inserir o valor de command.
      * @param command - o valor de command.
      */
-    public void setCommand(Command command) {
+    public void setCommand(OrderPad command) {
         this.command = command;
     }
 

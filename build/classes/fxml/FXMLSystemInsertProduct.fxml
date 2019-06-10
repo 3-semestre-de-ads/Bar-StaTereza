@@ -54,26 +54,6 @@
             </StackPane>
             <HBox alignment="CENTER" layoutX="42.0" layoutY="363.0" prefHeight="74.0" prefWidth="1196.0" spacing="100.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
                <children>
-                  <VBox prefHeight="62.0" prefWidth="129.0" HBox.hgrow="ALWAYS">
-                     <children>
-                        <Label prefHeight="21.0" prefWidth="79.0" text="CÓDIGO *">
-                           <font>
-                              <Font name="Rockwell" size="15.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="textFieldCodeGame" prefHeight="31.0" prefWidth="204.0">
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </TextField>
-                     </children>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                     <opaqueInsets>
-                        <Insets right="50.0" />
-                     </opaqueInsets>
-                  </VBox>
                   <VBox prefHeight="62.0" prefWidth="453.0" HBox.hgrow="ALWAYS">
                      <children>
                         <Label prefHeight="21.0" prefWidth="57.0" text="NOME *">
@@ -91,11 +71,11 @@
                         <Insets />
                      </HBox.margin>
                   </VBox>
-                  <VBox alignment="TOP_RIGHT" prefHeight="50.0" prefWidth="202.0" HBox.hgrow="ALWAYS">
+                  <VBox prefHeight="74.0" prefWidth="2.0" HBox.hgrow="ALWAYS">
                      <children>
                         <VBox alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="206.0">
                            <children>
-                              <Label prefHeight="18.0" prefWidth="213.0" text="CATEGORIA *" VBox.vgrow="ALWAYS">
+                              <Label prefHeight="18.0" prefWidth="374.0" text="CATEGORIA *" VBox.vgrow="ALWAYS">
                                  <font>
                                     <Font name="Rockwell" size="15.0" />
                                  </font>
@@ -112,23 +92,22 @@
                         <Insets />
                      </HBox.margin>
                   </VBox>
-                  <VBox alignment="TOP_RIGHT" prefHeight="50.0" prefWidth="202.0" HBox.hgrow="ALWAYS">
+                  <VBox alignment="TOP_RIGHT" prefHeight="62.0" prefWidth="129.0">
                      <children>
-                        <VBox alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="206.0">
-                           <children>
-                              <Label prefHeight="18.0" prefWidth="213.0" text="TIPO *" VBox.vgrow="ALWAYS">
-                                 <font>
-                                    <Font name="Rockwell" size="15.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </VBox>
-                        <ComboBox fx:id="comboBoxCategoryGame1" prefHeight="31.0" prefWidth="208.0">
+                        <Label prefHeight="21.0" prefWidth="143.0" text="PREÇO *">
+                           <font>
+                              <Font name="Rockwell" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="textFieldCodeGame1" prefHeight="31.0" prefWidth="204.0">
                            <VBox.margin>
                               <Insets top="10.0" />
                            </VBox.margin>
-                        </ComboBox>
+                        </TextField>
                      </children>
+                     <opaqueInsets>
+                        <Insets right="50.0" />
+                     </opaqueInsets>
                   </VBox>
                </children>
             </HBox>
@@ -146,23 +125,6 @@
             </StackPane>
             <HBox layoutX="39.0" layoutY="475.0" prefHeight="187.0" prefWidth="1200.0" spacing="80.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
                <children>
-                  <VBox prefHeight="62.0" prefWidth="129.0">
-                     <children>
-                        <Label prefHeight="21.0" prefWidth="79.0" text="PREÇO *">
-                           <font>
-                              <Font name="Rockwell" size="15.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="textFieldCodeGame1" prefHeight="31.0" prefWidth="204.0">
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </TextField>
-                     </children>
-                     <opaqueInsets>
-                        <Insets right="50.0" />
-                     </opaqueInsets>
-                  </VBox>
                   <VBox prefHeight="184.0" prefWidth="990.0" HBox.hgrow="ALWAYS">
                      <children>
                         <Label prefHeight="21.0" prefWidth="106.0" text="DESCRIÇÃO">

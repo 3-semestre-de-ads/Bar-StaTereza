@@ -8,7 +8,7 @@ import java.util.Date;
  */
 public class Allocation {
     private int code;
-    private Command command;
+    private OrderPad command;
     private Game game;
     private Date date;
 
@@ -19,7 +19,7 @@ public class Allocation {
      * @param game - o valor inicial da classe game.
      * @param date - o valor inicial de date.
      */
-    public Allocation(int code, Command command, Game game, Date date) {
+    public Allocation(int code, OrderPad command, Game game, Date date) {
         this.code = code;
         this.command = command;
         this.game = game;
@@ -46,7 +46,7 @@ public class Allocation {
      * Retorna o valor de command.
      * @return - o valor de command.
      */
-    public Command getCommand() {
+    public OrderPad getCommand() {
         return command;
     }
 
@@ -54,7 +54,7 @@ public class Allocation {
      * Inserir o valor de command.
      * @param command - o valor de command.
      */
-    public void setCommand(Command command) {
+    public void setCommand(OrderPad command) {
         this.command = command;
     }
 

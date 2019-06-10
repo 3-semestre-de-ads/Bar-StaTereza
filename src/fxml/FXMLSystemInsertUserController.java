@@ -5,6 +5,7 @@
  */
 package fxml;
 
+import classes.User;
 import functions.SceneChange;
 import java.io.IOException;
 import java.net.URL;
@@ -28,6 +29,15 @@ public class FXMLSystemInsertUserController implements Initializable {
     @FXML
     private StackPane stackPane;
  
+    private User user;
+    private String typeFunction;
+
+    public FXMLSystemInsertUserController(User user, String typeFunction) {
+        this.user = user;
+        this.typeFunction = typeFunction;
+    }
+    
+
     @FXML
     private void loadSceneUsers() throws IOException {
         sceneChange.sceneTransition(stackPane, anchorPane, "/fxml/FXMLSystemUsers.fxml");

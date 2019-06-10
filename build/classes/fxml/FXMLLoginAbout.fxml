@@ -16,7 +16,7 @@
          <children>
             <Pane prefHeight="731.0" prefWidth="471.0" style="-fx-background-color: #ffffff;">
                <children>
-                  <Button layoutX="116.0" layoutY="615.0" mnemonicParsing="false" onAction="#loadSceneHome" prefHeight="54.0" prefWidth="239.0" styleClass="buttonBlack" stylesheets="@../css/style.css" text="BACK" textFill="WHITE">
+                  <Button layoutX="116.0" layoutY="615.0" mnemonicParsing="false" onAction="#loadSceneHome" prefHeight="54.0" prefWidth="239.0" styleClass="buttonBlack" stylesheets="@../css/style.css" text="VOLTAR" textFill="WHITE">
                      <font>
                         <Font name="Rockwell" size="20.0" />
                      </font>

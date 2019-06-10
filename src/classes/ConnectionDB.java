@@ -1,6 +1,5 @@
 package classes;
 
-import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;

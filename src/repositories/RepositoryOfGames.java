@@ -3,6 +3,7 @@ package repositories;
 import classes.ConnectionDB;
 import classes.Game;
 import fxml.FXMLSystemGamesController;
+import interfaces.InterfaceCRUD;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,14 +16,11 @@ import javafx.collections.ObservableList;
  * Classe responsável por realizar o CRUD dos games.
  * @author Isaías de França Leite
  */
-public class RepositoryOfGames {
+public class RepositoryOfGames implements InterfaceCRUD {
     
     public Game game;
-    private ConnectionDB connectionDB = new ConnectionDB();
     private PreparedStatement statement;
     private String sql;
-    private String resultOperationDB = null;
-    
     /**
      *
      * @return
@@ -50,11 +48,16 @@ public class RepositoryOfGames {
      *
      * @return
      */
-    public ObservableList readDB(){
+    public ObservableList readDB(String search, int value){
         ObservableList<Game> listGame = FXCollections.observableArrayList();
         try {
-            ResultSet rs = connectionDB.getConnection().createStatement().executeQuery("SELECT * FROM Jogos");
-            
+            ResultSet rs = null;
+            if(value == 0){
+                rs = connectionDB.getConnection().createStatement().executeQuery("SELECT * FROM Jogos");
+            }
+            else{
+                rs = connectionDB.getConnection().createStatement().executeQuery("SELECT * FROM Jogos WHERE codJogo LIKE '%"+search+"%' OR nomeJogo LIKE '%"+search+"%' OR catJogo LIKE '%"+search+"%' OR descJogo LIKE '%"+search+"%'");
+            }
             while(rs.next()){
                 listGame.add(new Game(rs.getInt("codJogo"),rs.getString("nomeJogo"),rs.getString("catJogo"),rs.getString("descJogo")));
             }
@@ -115,6 +118,11 @@ public class RepositoryOfGames {
      */
     public String countTotalGames(){
         String result = connectionDB.executeQuery("SELECT COUNT(*) FROM Jogos");
+        return result;
+    }
+    
+    public String countTotalGames(String search){
+        String result = connectionDB.executeQuery("SELECT COUNT(*) FROM Jogos WHERE codJogo LIKE '"+search+"' OR nomeJogo LIKE '"+search+"' OR catJogo LIKE '"+search+"' OR descJogo LIKE '"+search+"'");
         return result;
     }
     

@@ -57,7 +57,7 @@
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="77.0" prefWidth="326.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <TextField>
+                        <TextField fx:id="searchGame">
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
@@ -69,7 +69,7 @@
                                     <Image url="@../images/btn_search.png" />
                                  </image>
                               </ImageView>
-                              <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="57.0" styleClass="buttonTransparent" stylesheets="@../css/style.css">
+                              <Button mnemonicParsing="false" onAction="#search" prefHeight="44.0" prefWidth="57.0" styleClass="buttonTransparent" stylesheets="@../css/style.css">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -89,7 +89,7 @@
                   </HBox>
                   <HBox alignment="CENTER_RIGHT" prefHeight="77.0" prefWidth="326.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <ComboBox prefWidth="150.0" />
+                        <ComboBox fx:id="comboBoxFilter" prefWidth="170.0" />
                      </children>
                   </HBox>
                </children>

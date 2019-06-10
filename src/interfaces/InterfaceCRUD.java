@@ -1,28 +1,36 @@
 package interfaces;
 
+import classes.ConnectionDB;
+import javafx.collections.ObservableList;
+
 /**
  * Interface responsável por estabelecer todos os metódos necessário para realizar o CRUD .
  * @author Isaías de França Leite
  */
 public interface InterfaceCRUD {
-
+    
+    public ConnectionDB connectionDB = new ConnectionDB();;
+    
     /**
      * Função responsável por inserir os dados no banco de dados
+     * @return 
      */
-    public String create();
-
+    public String createDB();
     /**
      * Função responsável por listar os dados no banco de dados
+     * @param search
+     * @param value
+     * @return 
      */
-    public void read();
-    
+    public ObservableList readDB(String search, int value);
     /**
      * Função responsável por alterar os dados no banco de dados
+     * @return 
      */
-    public void update();
-    
-    /**
+    public String updateDB();
+   /**
      * Função responsável por deletar os dados no banco de dados
+     * @return 
      */
-    public void delete();
+    public String deleteDB();
 }

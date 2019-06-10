@@ -2,7 +2,7 @@ package repositories;
 
 import classes.ConnectionDB;
 import classes.Product;
-import fxml.FXMLSystemGamesController;
+import interfaces.InterfaceCRUD;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,13 +15,11 @@ import javafx.collections.ObservableList;
  * Classe responsável por realizar o CRUD dos produtos.
  * @author Isaías de França Leite
  */
-public class RepositoryOfProducts{
+public class RepositoryOfProducts implements InterfaceCRUD{
     
     public Product product;
-    private ConnectionDB connectionDB = new ConnectionDB();
     private PreparedStatement statement;
     private String sql;
-    private String resultOperationDB = null;
     
     /**
      *
@@ -49,13 +47,20 @@ public class RepositoryOfProducts{
     
      /**
      *
+     * @param search
+     * @param value
      * @return
      */
-    public ObservableList readDB(){
+    public ObservableList readDB(String search, int value){
         ObservableList<Product> listProduct = FXCollections.observableArrayList();
+        ResultSet rs = null;
         try {
-            ResultSet rs = connectionDB.getConnection().createStatement().executeQuery("SELECT * FROM Produto");
-            
+            if(value == 0){
+                rs = connectionDB.getConnection().createStatement().executeQuery("SELECT * FROM Produto");
+            }
+            else{
+                rs = connectionDB.getConnection().createStatement().executeQuery("SELECT * FROM Produto WHERE nomeProduto LIKE '"+search+"' OR catProduto LIKE '"+search+"' OR preco LIKE '"+search+"' OR descProduto LIKE '"+search+"'");
+            }
             while(rs.next()){
                 listProduct.add(new Product(rs.getInt("codProduto"),rs.getString("nomeProduto"),rs.getString("catProduto"),rs.getDouble("preco"),rs.getString("descProduto")));
             }
@@ -93,5 +98,15 @@ public class RepositoryOfProducts{
     public String countTotalProducts(){
         String result = connectionDB.executeQuery("SELECT COUNT(*) FROM Produto");
         return result;
+    }
+    
+        public String countTotalProducts(String search){
+        String result = connectionDB.executeQuery("SELECT COUNT(*) FROM Produto WHERE nomeProduto LIKE '"+search+"' OR catProduto LIKE '"+search+"' OR preco LIKE '"+search+"' OR descProduto LIKE '"+search+"'");
+        return result;
+    }
+
+    @Override
+    public String updateDB() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

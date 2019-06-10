@@ -8,6 +8,7 @@ public class Table {
     private int code;
     private String status;
 
+     public Table(){}
     /**
      * Constructor da classe Table.
      * @param code - o valor inicial de code.
@@ -49,6 +50,4 @@ public class Table {
     public void setStatus(String status) {
         this.status = status;
     }
-    
-    
 }

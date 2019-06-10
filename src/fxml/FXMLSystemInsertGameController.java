@@ -35,7 +35,7 @@ public class FXMLSystemInsertGameController implements Initializable {
     Alert alertSystem = new Alert(Alert.AlertType.CONFIRMATION);
     
     // Mensagem de status de error
-    Alert alertError = new Alert(Alert.AlertType.CONFIRMATION);
+    Alert alertError = new Alert(Alert.AlertType.INFORMATION);
     
     // Titulo do menu de acordo com a escolha da função.
     @FXML private Label titleTypeFunction;
@@ -44,7 +44,6 @@ public class FXMLSystemInsertGameController implements Initializable {
     RepositoryOfGames repositoryOfGames = new RepositoryOfGames();
     
     // TextField para inserir os dados no banco de dados.
-    @FXML private TextField textFieldCodeGame;
     @FXML private TextField textFieldNameGame;
     @FXML private ComboBox comboBoxCategoryGame;
     private List<String> categoryGame = new ArrayList<>();
@@ -82,7 +81,6 @@ public class FXMLSystemInsertGameController implements Initializable {
         operationsCreateAndUpdate();
         
     }    
-    
    
     /**
      * Transição da tela de inserir jogos para telas de lista jogos.
@@ -103,27 +101,36 @@ public class FXMLSystemInsertGameController implements Initializable {
         comboBoxCategoryGame.setItems(listCategory);
     } 
     
+    /**
+     *
+     */
     public void operationsCreateAndUpdate(){
+        comboBoxCategoryGame.getSelectionModel().selectFirst();
         if(typeFunction.equals("C")){
             titleTypeFunction.setText("ADICIONAR JOGO");
             buttonTypeFunction.setText("ADICIONAR");
             buttonTypeFunction.setOnAction((ActionEvent event) -> {
-                repositoryOfGames.game =  new Game(Integer.parseInt(textFieldCodeGame.getText()), textFieldNameGame.getText(), comboBoxCategoryGame.getValue().toString(), textFieldDescription.getText());
-                String resultQuery = repositoryOfGames.createDB();
-                // Verificar se os dados foram cadastrados.
-                if(resultQuery.equals("CREATE")){
-                    alertError.setTitle("Error de Cadastro");
-                    alertError.setHeaderText(null);
-                    alertError.setContentText("Dados cadastrados com sucesso");
+                if(!"".equals(textFieldNameGame.getText())){
+                    repositoryOfGames.game =  new Game(0, textFieldNameGame.getText(), comboBoxCategoryGame.getValue().toString(), textFieldDescription.getText());
+                    String resultQuery = repositoryOfGames.createDB();
+                    // Verificar se os dados foram cadastrados.
+                    if(resultQuery.equals("CREATE")){
+                        alertError.setHeaderText(null);
+                        alertError.setContentText("Dados cadastrados com sucesso");
+                    }
+                    else{
+                        alertError.setContentText(resultQuery);
+                    }
+                    alertError.showAndWait();
+                    try {
+                        loadSceneGames();
+                    } catch (IOException ex) {
+                        Logger.getLogger(FXMLSystemInsertGameController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
-                else{
-                    alertError.setContentText(resultQuery);
-                }
-                alertError.showAndWait();
-                try {
-                    loadSceneGames();
-                } catch (IOException ex) {
-                    Logger.getLogger(FXMLSystemInsertGameController.class.getName()).log(Level.SEVERE, null, ex);
+                else {
+                    alertError.setContentText("Preencha os campos obrigatórios!");
+                    alertError.showAndWait();
                 }
             });
         }
@@ -131,26 +138,30 @@ public class FXMLSystemInsertGameController implements Initializable {
         {
             titleTypeFunction.setText("EDITAR JOGO");
             buttonTypeFunction.setText("EDITAR");
-            textFieldCodeGame.setText(Integer.toString(game.getCode()));
             textFieldNameGame.setText(game.getName());
             comboBoxCategoryGame.setValue(game.getCategory());
             textFieldDescription.setText(game.getDescription());
             buttonTypeFunction.setOnAction((ActionEvent event) -> {
-                repositoryOfGames.game =  new Game(Integer.parseInt(textFieldCodeGame.getText()), textFieldNameGame.getText(), comboBoxCategoryGame.getValue().toString(), textFieldDescription.getText());
-                String resultQuery = repositoryOfGames.updateDB();
-                if(resultQuery.equals("UPDATE")){
-                    alertError.setTitle("Error de Cadastro");
-                    alertError.setHeaderText(null);
-                    alertError.setContentText("Dados alterados com sucesso");
+                if(!"".equals(textFieldNameGame.getText())){
+                    repositoryOfGames.game =  new Game(game.getCode(), textFieldNameGame.getText(), comboBoxCategoryGame.getValue().toString(), textFieldDescription.getText());
+                    String resultQuery = repositoryOfGames.updateDB();
+                    if(resultQuery.equals("UPDATE")){
+                        alertError.setHeaderText(null);
+                        alertError.setContentText("Dados alterados com sucesso");
+                    }
+                    else{
+                        alertError.setContentText(resultQuery);
+                    }
+                        alertError.showAndWait();
+                    try {
+                        loadSceneGames();
+                    } catch (IOException ex) {
+                        Logger.getLogger(FXMLSystemInsertGameController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                 else{
-                    alertError.setContentText(resultQuery);
-                }
+                    alertError.setContentText("Preencha os campos obrigatórios!");
                     alertError.showAndWait();
-                try {
-                    loadSceneGames();
-                } catch (IOException ex) {
-                    Logger.getLogger(FXMLSystemInsertGameController.class.getName()).log(Level.SEVERE, null, ex);
                 }
             });
         }

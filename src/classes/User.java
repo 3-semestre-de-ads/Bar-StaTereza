@@ -9,21 +9,29 @@ public class User {
     private String name;
     private String username;
     private String password;
+    private String typeOfPermission;
 
+    /**
+     * Constructor da classe User.
+     */
+    public User(){}
+    
     /**
      * Constructor da classe User.
      * @param code - o valor inicial de code.
      * @param name - o valor inicial de name.
      * @param username - o valor inicial de username.
      * @param password - o valor inicial de password.
+     * @param typeOfPermission
      */
-    public User(int code, String name, String username, String password) {
+    public User(int code, String name, String username, String password, String typeOfPermission) {
         this.code = code;
         this.name = name;
         this.username = username;
         this.password = password;
+        this.typeOfPermission = typeOfPermission;
     }
-
+    
     /**
      * retorna o valor de code.
      * @return - o valor de code.
@@ -87,4 +95,20 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     } 
+
+    /**
+     * Retorna o valor de typeOfPermission.
+     * @return
+     */
+    public String getTypeOfPermission() {
+        return typeOfPermission;
+    }
+
+    /**
+     * Inserir o valor de typeOfPermission.
+     * @param typeOfPermission
+     */
+    public void setTypeOfPermission(String typeOfPermission) {
+        this.typeOfPermission = typeOfPermission;
+    }
 }

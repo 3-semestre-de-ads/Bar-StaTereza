@@ -8,7 +8,8 @@ import java.util.Date;
  */
 public class Reservation {
     private int code;
-    private Table table;
+    private int codeTable;
+    private Table table = new Table();
     private String customer;
     private Date date;
     private String observation;
@@ -17,19 +18,18 @@ public class Reservation {
     /**
      * Construtor da classe reservation.
      * @param code - o valor inicial de code.
-     * @param table - valor incial de table.
+     * @param codeTable - o valor da table.
      * @param customer - o valor inicial de customer.
      * @param date - o valor inicial de date.
      * @param observation - o valor inicial de observation.
-     * @param status - o valor inicial de status.
      */
-    public Reservation(int code, Table table, String customer, Date date, String observation, String status) {
+    public Reservation(int code, int codeTable, String customer, Date date, String observation) {
         this.code = code;
-        this.table = table;
+        this.table.setCode(codeTable);
+        this.codeTable = table.getCode();
         this.customer = customer;
         this.date = date;
         this.observation = observation;
-        this.status = status;
     }
 
     /**
@@ -49,21 +49,21 @@ public class Reservation {
     }
 
     /**
-     * retorna o valor table.
-     * @return - o valor de table.
+     *
+     * @return
      */
-    public Table getTable() {
-        return table;
+    public int getCodeTable() {
+        return codeTable;
     }
 
     /**
-     * inserir o valor de table.
-     * @param table - o valor de table.
+     *
+     * @param codeTable
      */
-    public void setTable(Table table) {
-        this.table = table;
+    public void setCodeTable(int codeTable) {
+        this.codeTable = codeTable;
     }
-
+    
     /**
      * retorna o valor de customer.
      * @return - valor de customer.

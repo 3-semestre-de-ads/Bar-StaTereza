@@ -24,6 +24,26 @@
     -fx-text-fill: #ffffff;
     -fx-background-color: #323538;
 }
+.buttonWhite{
+    -fx-text-fill: #000000;
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 35px;
+}
+
+
+
+
+
+
+
+.buttonWhite:hover{
+    -fx-text-fill: #323538;
+    -fx-background-color: #dddddd;
+}
+.buttonWhite:pressed{
+    -fx-text-fill: #000000;
+    -fx-background-color: #ffffff;
+}
 .buttonGrey{
     -fx-text-fill: #ffffff;
     -fx-background-color: #737171;

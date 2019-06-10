@@ -7,58 +7,84 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="borderpane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.FXMLSystemController">
+<BorderPane fx:id="borderpane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <left>
       <VBox prefHeight="978.0" prefWidth="284.0" style="-fx-background-color: #323538;" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane prefHeight="345.0" prefWidth="277.0">
+            <StackPane fx:id="stackPane">
                <children>
-                  <ImageView fitHeight="153.0" fitWidth="145.0" layoutX="70.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/logo_company.png" />
-                     </image>
-                  </ImageView>
-                  <Text fill="WHITE" layoutX="108.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INTERN">
-                     <font>
-                        <Font name="Segoe UI" size="20.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" layoutX="18.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Isaías de França Leite">
-                     <font>
-                        <Font name="Lucida Bright Regular" size="24.0" />
-                     </font>
-                  </Text>
-                  <ImageView fitHeight="50.0" fitWidth="46.0" layoutX="28.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/btn_config_user.png" />
-                     </image>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-                  <ImageView fitHeight="50.0" fitWidth="46.0" layoutX="118.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/btn_help_user.png" />
-                     </image>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-                  <ImageView fitHeight="50.0" fitWidth="46.0" layoutX="208.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/btn_exit_user.png" />
-                     </image>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
+                  <AnchorPane fx:id="anchorPane" prefHeight="339.0" prefWidth="292.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="339.0" prefWidth="292.0">
+                           <children>
+                              <ImageView fitHeight="153.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/logo_company.png" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" top="15.0" />
+                                 </VBox.margin>
+                              </ImageView>
+                              <Text fx:id="textUser" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Isaías de França Leite" textAlignment="CENTER" wrappingWidth="290.99999994039536" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Lucida Bright Regular" size="24.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="7.5" />
+                                 </VBox.margin>
+                              </Text>
+                              <Text fx:id="textTypeOfUser" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="ADMINISTRADOR" textAlignment="CENTER" wrappingWidth="291.99999913573265" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Segoe UI" size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" top="7.5" />
+                                 </VBox.margin>
+                              </Text>
+                              <HBox alignment="CENTER" prefHeight="67.0" prefWidth="292.0" spacing="50.0">
+                                 <children>
+                                    <ImageView fitHeight="50.0" fitWidth="46.0" onMouseClicked="#loadSceneConfiguration" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/btn_config_user.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                    <ImageView fitHeight="50.0" fitWidth="46.0" onMouseClicked="#help" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/btn_help_user.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                    <ImageView fx:id="btnLogout" fitHeight="50.0" fitWidth="46.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/btn_exit_user.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
                </children>
-            </AnchorPane>
+            </StackPane>
             <Pane prefHeight="14.0" prefWidth="284.0" style="-fx-background-color: #ffffff;" />
             <Button fx:id="btnCashier" mnemonicParsing="false" onAction="#loadSceneCashier" prefHeight="65.0" prefWidth="292.0" styleClass="buttonMenu" stylesheets="@../css/style.css" text="CAIXA" textFill="WHITE">
                <VBox.margin>
@@ -71,7 +97,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="btnReservations" mnemonicParsing="false" onAction="#loadSceneReservations" prefHeight="65.0" prefWidth="287.0" styleClass="buttonMenu" stylesheets="@../css/style.css" text="RESERVAS" textFill="WHITE">
+            <Button fx:id="btnReservations" mnemonicParsing="false" onAction="#loadSceneReservations" prefHeight="65.0" prefWidth="296.0" styleClass="buttonMenu" stylesheets="@../css/style.css" text="RESERVAS" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="5.0" top="5.0" />
                </VBox.margin>

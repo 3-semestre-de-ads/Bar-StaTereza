@@ -53,32 +53,13 @@
             </StackPane>
             <HBox alignment="CENTER" layoutX="42.0" layoutY="363.0" prefHeight="74.0" prefWidth="1196.0" spacing="200.0" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="42.0">
                <children>
-                  <VBox prefHeight="62.0" prefWidth="129.0" HBox.hgrow="ALWAYS">
-                     <children>
-                        <Label prefHeight="21.0" prefWidth="79.0" text="CÓDIGO *">
-                           <font>
-                              <Font name="Rockwell" size="15.0" />
-                           </font></Label>
-                        <TextField fx:id="textFieldCodeGame" prefHeight="31.0" prefWidth="204.0">
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </TextField>
-                     </children>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                     <opaqueInsets>
-                        <Insets right="50.0" />
-                     </opaqueInsets>
-                  </VBox>
-                  <VBox prefHeight="62.0" prefWidth="453.0" HBox.hgrow="ALWAYS">
+                  <VBox prefHeight="74.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
                      <children>
                         <Label prefHeight="21.0" prefWidth="57.0" text="NOME *">
                            <font>
                               <Font name="Rockwell" size="15.0" />
                            </font></Label>
-                        <TextField fx:id="textFieldNameGame" prefHeight="31.0" prefWidth="367.0">
+                        <TextField fx:id="textFieldNameGame" prefHeight="31.0" prefWidth="438.0">
                            <VBox.margin>
                               <Insets top="10.0" />
                            </VBox.margin>

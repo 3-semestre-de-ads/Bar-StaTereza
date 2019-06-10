@@ -12,6 +12,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 
@@ -22,6 +24,15 @@ import javafx.scene.layout.StackPane;
  */
 public class FXMLSystemInsertProductController implements Initializable {
     
+    
+    // Mensagem de confirmação para alterar ou deletar.
+    Alert alertSystem = new Alert(Alert.AlertType.CONFIRMATION);
+    
+    // Mensagem de status de error
+    Alert alertError = new Alert(Alert.AlertType.INFORMATION);
+    
+    // Titulo do menu de acordo com a escolha da função.
+    @FXML private Label titleTypeFunction;
     SceneChange sceneChange = new SceneChange();
     
     @FXML
